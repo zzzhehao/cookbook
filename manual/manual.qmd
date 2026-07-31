@@ -1,0 +1,23 @@
+<!-- Synced from `/Users/hu_zhehao/Desktop/zzzhehao/manual/manual.md` -->
+
+
+This is my collection of manuals, cookbooks, and operation notes. It's the practical counterpart of [my notebook](https://zzzhehao.github.io/notebook/), with focus on how to get things done over how does thing work. Likewise, the thematic focus is on deep-sea biology, from *in situ* to *in silico*. 
+
+# Environment 
+
+## Operating System
+
+As most of the manuals I collect here are *in silico* (computing operations), I think it's better to let you know my working environment and premises coming from it. The platform I use is macOS, so if not specified, all the shell commands are in `zsh`. I think for most of the programs it won't make a big difference, but if you are using Windows, you might want to get familiar with the cmd and powershell syntax, as well as their CLI program ecosystems. So that when I am talking about running a shell script via Python scheduled by crontab, you can get the ideas and implement them on Windows, instead of wondering why `crontab -e` doesn't work.
+
+## Programming Languages
+
+The primary language I use is **R**. You know what it is if you work in biology. Python is also in my toolkit. I recommend installing them if you haven't done so yet. 
+
+- [The R Project](https://www.r-project.org) 
+- I personally use the newer [Positron IDE](https://positron.posit.co) to do all my work, but you can also use [RStudio](https://posit.co/downloads) combined with others. 
+
+## Program Ecosystems
+
+Other programs I recommend having on your machine:
+
+- [Homebrew](https://brew.sh): Package manager for many conventional tools. Once set up, you only need one-liners to install programs managed by it.

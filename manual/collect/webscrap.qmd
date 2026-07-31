@@ -1,0 +1,24 @@
+<!-- Synced from `/Users/hu_zhehao/Desktop/zzzhehao/manual/collect/webscrap.md` -->
+
+# Scrapping Webpage
+
+## Disclaimer
+
+This tutorial is provided for educational purposes only. Web scraping laws and website Terms of Service vary significantly by jurisdiction and platform. The commands provided here are for demonstration purposes only.
+
+If you choose to apply these techniques, you are solely responsible for ensuring your actions comply with the target website's Terms of Service and local data protection laws. Always scrape ethically by implementing rate limits to avoid straining the host's servers. The author assumes no liability for any legal consequences, IP bans, or damages resulting from the use of this information. Downloading copyrighted material for offline viewing does not grant you the right to republish or distribute that content.
+
+## Mirror a website 
+
+```bash
+wget --recursive --page-requisites --html-extension --convert-links --accept-regex "parent/current" --wait=5 https://website
+```
+
+- `--recursive` scraps all pages under the given directory.
+- `--page-requisites` gets everything required to display the page (images, etc.).
+- `--html-extension` gives the file `.html` extension if it doesn't have one yet.
+- `--convert-links` links to the files that are also scrapped will become local.
+- `--accept-regex <regex>`  to specify what to scrap. You can also use `--no-parent` to prevent scrapping parents and all of its children.
+- `--wait=5` pause for 5 seconds between requests, to prevent overloading the server or getting myself banned.
+
+If you use Windows and it's unhappy with URL queries with `?` in the generated file name, add the flag `--restrict-file-names=windows` to use safe characters. 

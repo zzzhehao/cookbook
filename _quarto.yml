@@ -1,0 +1,65 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Zhehao's Cookbook"
+  sidebar: 
+    logo: logo/logo_1000.png
+    collapse-level: 1
+  reader-mode: false
+  page-footer: 
+    right: |
+      Zhehao's note on his bumpy way of pursuing magic and mystery of biology. Build with <a href="https://quarto.org/"><u>Quarto</u></a>.
+  cover-image: logo/logo_1000.png
+  favicon: logo/logo_300.png
+  site-url: https://zzzhehao.github.io/manual
+  repo-url: https://github.com/zzzhehao/manual
+  repo-branch: main
+  repo-actions: [issue]
+  chapters:
+    - index.qmd
+    - part: "Tools"
+      chapters:
+        - manual/tools/zpkg.qmd
+        - manual/tools/molspec_tools.qmd
+    - part: "OS"
+      chapters:
+        - manual/os/file system/Edge cases.qmd
+    - part: "Software"
+      chapters:
+        - manual/management/obsidian.qmd
+        - manual/management/affinity design.qmd
+    - part: "Data Collection"
+      chapters:
+        - manual/collect/webscrap.qmd
+    - part: "Molecular Biology"
+      chapters: 
+        - manual/phylogeny/dna_extraction.qmd
+        - manual/phylogeny/pcr_sequencing.qmd
+        - manual/phylogeny/seq_prep.qmd
+        - manual/phylogeny/seq_align.qmd
+    - part: "GIS"
+      chapters: 
+        - manual/gis/GIS related workframe.qmd
+    - references.qmd
+
+bibliography: ../notebook/references.bib
+
+format:
+  html:
+    theme: 
+      dark: theme/dark.scss
+      light: theme/light.scss
+    code-copy: true
+    code-overflow: wrap
+    code-tools: 
+      caption: none
+      source: false
+    highlight-style: atom-one-dark
+    
+editor: source
+lightbox: true
+
+execute: 
+  freeze: auto

@@ -1,0 +1,3 @@
+<!-- Synced from `/Users/hu_zhehao/Desktop/zzzhehao/manual/management/obsidian.md` -->
+
+- Text searching in Obsidian Core Plugin Webview is not a good idea. It can freeze.

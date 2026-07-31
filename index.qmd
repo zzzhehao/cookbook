@@ -1,0 +1,3 @@
+# Welcome {.unnumbered}
+
+{{< include manual/manual.qmd >}}

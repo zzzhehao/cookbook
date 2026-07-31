@@ -1,0 +1,3 @@
+<!-- Synced from `/Users/hu_zhehao/Desktop/zzzhehao/manual/management/affinity design.md` -->
+
+- Affinity can't handle `svg` file with custom CSS. It's usually shown as the imported `svg` file seems completely black. See [here](https://forum.affinity.serif.com/index.php?/topic/136944-svg-imports-as-black/). Easiest solution is to use `eps` file in the upstream work. 

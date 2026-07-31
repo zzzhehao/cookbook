@@ -1,0 +1,103 @@
+<!-- Synced from `/Users/hu_zhehao/Desktop/zzzhehao/manual/phylogeny/pcr_sequencing.md` -->
+
+# PCR and Sanger Sequencing
+
+## Primers
+
+### Isopods & other peracarids
+
+| **Target** | **Primer** | **5'-3' Sequence**                          | **Reference** |
+| ---------- | ---------- | ------------------------------------------- | ------------- |
+| COI        | jgLCO1490  | TGTAAAACGACGGCCAGTT5TC5AC5AAYCAYAARGAYATTGG | @geller2013   |
+| COI        | jgHCO2198  | CAGGAAACAGCTATGACTA5ACYTC5GGRTG5CCRAARAAYCA | @geller2013   |
+| COI        | LCO1490-JJ | CHA CWA AYC ATA AAG ATA TYG G               | @astrin2008   |
+| COI        | HCO2198-JJ | AWA CTT CVG GRT GVC CAA RAA TCA             | @astrin2008   |
+| COI        | dgLCO1490  | GGTCAACAAATCATAAAGAYATYGG                   | @meyer2003    |
+| COI        | dgHCO2198  | TAAACTTCAGGGTGACCAAARAAYCA                  | @meyer2003    |
+| 18S        | 18A1mod    | CTGGTTGATCCTGCCAGTCATATGC                   | @raupach2009  |
+| 18S        | 400F*      | ACG GGT AAC GGG GAA TCA GGG                 | @dreyer2001   |
+| 18S        | A700Fmod*  | GCCGCGGTAATTCCAGC                           | @raupach2009  |
+| 18S        | 1000F*     | CGA TCA GAT ACC GCC CTA GTT C               | @dreyer2001   |
+| 18S        | 700R*      | CGC GGC TGC TGG CAC CAG CAC                 | @dreyer2001   |
+| 18S        | 1155R*     | CCG TCA ATT CCT TTA AGT TTC AG              | @dreyer2001   |
+| 18S        | 1500Rmod*  | CATCTAGGGCATCACAGACC                        | @raupach2009  |
+| 18S        | 1800Rmod   | GATCCTTCCGCAGGTTCACCTACG                    | @raupach2009  |
+
+- Primers marked with asterisk (\*) are internal primers used for sequencing the whole 18S region. 
+
+## PCR Cocktails
+
+Using [AccuStart II PCR Super Mix](https://www.quantabio.com/product/accustart-ii-pcr-supermix/). Require at least 1 min at 94ºC for polymerase activation. 
+
+| Components                  | 20 μl reaction | 50 μl reaction (18S) |
+| --------------------------- | -------------- | -------------------- |
+| AccuStart                   | 10 μl          | 25 μl                |
+| Primer forward (10 pmol/μl) | 0.5 μl         | 1.25 μl              |
+| Primer reverse (10 pmol/μl) | 0.5 μl         | 1.25 μl              |
+| DNA                         | 2-5 μl         | 4-6 μl               |
+| Molecular-grade water       | ad 20 μl       | ad 50 μl             |
+
+## PCR Programs
+
+### Standard 3-step
+
+| **Step** | **Process**          | **Temperature** (ºC) | **Time** | **To step #** | **Cycle** |
+| -------- | -------------------- | -------------------- | -------- | ------------- | --------- |
+| 1        | Initial denaturation | 95                   | 5:00     |               |           |
+| 2        | Denaturation         | 95                   | 0:45     |               |           |
+| 3        | Annealing            | 45                   | 0:50     |               |           |
+| 4        | Elongation           | 72                   | 1:00     | 2             | 38        |
+| 5        | Final elongation     | 72                   | 5:00     |               |           |
+| 6        | Pause                | 10                   | $\infty$ |               |           |
+
+### 3x15 Touch-up for COI
+
+| **Step** | **Process**           | **Temperature** (ºC) | **Time** | **To step #** | **Cycle** | **$\Delta$T** |
+| -------- | --------------------- | -------------------- | -------- | ---------------------------- | --------- | ------------- |
+| 1        | Initial denaturation  | 95                   | 5:00     |                              |           |               |
+| 2        | Denaturation          | 95                   | 0:45     |                              |           |               |
+| 3        | Annealing             | 48                   | 1:00     |                              |           | \+ 0.5ºC      |
+| 4        | Elongation            | 72                   | 1:00     | 2                            | 15        |               |
+| 5        | Repeat touch-up loops | -                    | -        | 2                            | 3         |               |
+| 6        | Final elongation      | 72                   | 5:00     |                              |           |               |
+| 7        | Pause                 | 10                   | $\infty$ |                              |           |               |
+
+- Touch-up protocol adopted from @rowther2012, has the ability to amplify low-abundant / difficult to amplify fragment while keeping primer specificit.
+- Original loop configuration was proposed as 5 loops of 10 cycles (0.5ºC step), Geller primers are able to amplify at higher temperature and 50 cycles yielded amplification in negative control, thus adjust to 3 loops of 15 cycles.
+- If primer shows less tolerance in annealing temperature, consider 4x10 configuration or other temperature gradients. 
+
+### Touchdown for 18S (modified from @dreyer2001)
+
+| **Step** | **Process**          | **Temperature** (ºC) | **Time** | **To step #** | **Cycle** | **$\Delta$T** |
+| -------- | -------------------- | -------------------- | -------- | ---------------------------- | --------- | ------------- |
+| 1        | Initial denaturation | 94                   | 5:00     |                              |           |               |
+| 2        | Denaturation         | 94                   | 0:30     |                              |           |               |
+| 3        | Annealing (1-10)     | 62.5                 | 0:50     |                              | (10)      | \- 1ºC        |
+| 4        | Annealing (11-36)    | 52.5                 | 0:50     |                              | (26)      |               |
+| 5        | Elongation           | 72                   | 2:30     | 2                            | 36        |               |
+| 6        | Final elongation     | 72                   | 10:00    |                              |           |               |
+| 7        | Pause                | 10                   | $\infty$ |                              |           |               |
+
+## Gel electrophoresis
+
+- 1% Agarose - TAE (1x) Gel 
+- 0.005% MidoriGreen (2 μl for 40 ml Gel)
+- 20-25 min at 90V / 10 min at 110 V (M chamber)
+- 2-3 μl ladder / 4 μl PCR product in each gel pocket
+
+## PCR product purification
+
+- Take required volumn of PCR product for sequencing into new 0.5 ml stripes.
+- Mix ExoSAP mastermix fresh before purification. For every 10 μl PCR product:
+    - 1 μl Exo I
+    - 2 μl FAST-AP
+- Mix by gently flick the tube, add it in the lids of the strips and spin down to products. No more mixing. 
+- Incubate (in thermocycler): 15 min at 37ºC and 15 min at 80ºC.
+
+## Sequencing 
+
+- Both Eurofins Lightrun and Macrogen EZ-Seq require the same composition. 
+- 5 μl PCR product + 5 μl primer (5 pmol/ul)
+- Macrogen EZ-seq provides portal for metadata import: [Metadata upload portal](https://order.macrogen-europe.com/mypage/ezseq/retrieveEzEcoSeqSearch.do?menuCd=ORD100800)  
+
+

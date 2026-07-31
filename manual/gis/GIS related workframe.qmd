@@ -1,0 +1,6 @@
+<!-- Synced from `/Users/hu_zhehao/Desktop/zzzhehao/manual/gis/GIS related workframe.md` -->
+
+- [**PostGIS**](https://postgis.net): extension of PostgreSQL to turn it into a functional geospatial database.
+- [**GeoPandas**](https://geopandas.org/en/stable/): Python library for geospatial data processing
+- [**JupyterGIS**](https://github.com/geojupyter/jupytergis): web-based app for real-time collaborative GIS work, QGIS and Python integration
+- [**GIS documentation** (local)](../../resource/documentation/QGIS-Documentation/build/html/en/genindex.html) 

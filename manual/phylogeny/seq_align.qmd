@@ -1,0 +1,4 @@
+<!-- Synced from `/Users/hu_zhehao/Desktop/zzzhehao/manual/phylogeny/seq_align.md` -->
+
+# Multiple Sequence Alignment (MSA)
+

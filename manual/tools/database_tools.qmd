@@ -1,0 +1,82 @@
+<!-- Synced from `/Users/hu_zhehao/Desktop/zzzhehao/manual/tools/database_tools.md` -->
+
+# Database Tools
+
+## PostGIS
+
+### Dependencies
+
+I have later discovered that `make install` seems able to install all dependencies at once. If not then I have the note on installing them one-by-one. Details see `README.postgis` (shoud have read this better).
+
+#### GEOS
+
+- [releases](https://libgeos.org/usage/download/)
+- decompress with `tar -xjvf`
+- prepare build with `mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release ..`
+- compile with `cmake --build .`
+- install with `sudo make install`
+
+I realized later that GEOS can also be installed via Homebrew.
+
+
+#### Homebrew dependencies for `./configure`
+
+- **PROJ**: `brew install proj` (800MB) 
+- **Protobuf-c**: `brew install protobuf-c` 
+	- skipping it is also an option: `--without-protobuf`.
+- **GDAL**: `brew install gdal` 
+- **pkg-config**: might also be smart to install `brew install pkg-config`
+- Protobuf-c and GDAL are optional. See README.postgis
+
+### Download and install
+
+Download from [releases](https://postgis.net/development/source_code/). `cd` to where the `.tar` file resides, decompress with `tar -xvf`. Then `cd` into the created folder. The general install process is:
+
+- `./configure`
+	- if PROJ was installed via Homebrew, add `--with-projdir=$(brew --prefix proj)` 
+	- if GDAL was installed via Homebrew, add `--with-gdalconfig=$(brew --prefix gdal)/bin/gdal-config`
+- `make`: postGIS uses GNU make. 
+	- if any error comes in between, always run `make clean` before next attempt to clean all half-way files. 
+	- if any error states `libintl.h` not found, it's PGXS overridng standard CFLAGS. Before solving this, ensure that `gettext` is installed via Homebrew (which contains the `libintl.h` script), then export following variables before make:
+
+```sh
+export C_INCLUDE_PATH="$(brew --prefix gettext)/include"
+export CPLUS_INCLUDE_PATH="$(brew --prefix gettext)/include"
+export LIBRARY_PATH="$(brew --prefix gettext)/lib"
+```
+
+- `sudo make install` to install. 
+
+If your PostgreSQL was installed via Homebrew like I do (might be clever to do it otherwise, as it's not the _default_ way), you need to add some flags during installation. First you need to tell the configuration where your PostgreSQL is by adding a flag pointing to your `pg_config` file:
+
+```sh
+./configure --with-pgconfig=/opt/homebrew/opt/postgresql@15/bin/pg_config
+```
+
+PGXS also defaults the `usr/local/bin` for PostgreSQL excutable during make and make install. So you will need to specify your paths too. To compile the build file:
+
+```sh
+make PG_CONFIG=/opt/homebrew/opt/postgresql@15/bin/pg_config bindir=/opt/homebrew/opt/postgresql@15/bin
+```
+
+To finally install:
+
+```sh
+sudo make PG_CONFIG=/opt/homebrew/opt/postgresql@15/bin/pg_config bindir=/opt/homebrew/opt/postgresql@15/bin install
+```
+
+
+## TimescaleDB
+
+### Dependencies
+
+Requires **Docker**. 
+
+### Install
+
+One-liner: 
+
+```sh
+curl -sL https://tsdb.co/start-local | sh
+```
+

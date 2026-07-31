@@ -1,0 +1,18 @@
+<!-- Synced from `/Users/hu_zhehao/Desktop/zzzhehao/manual/phylogeny/dna_extraction.md` -->
+
+# DNA Extraction
+
+## Tissue prep
+
+Take 1 or more legs (not important for species identification), if the specimen is very small, consider taking body muscle with micro-scissors. All tools must be sterilized. Taken tissue can be stored in Ethanol at 4/-20ºC for a longer period.
+
+## Extraction (Macherey-Nagel)
+
+Using Macherey-Nagel Kit "Genomic DNA from tissue". Following protocol 5. 
+
+### Protocol 5: modifications and notes
+
+- Pre-lysis step extended to overnight (8+ hrs) at 56ºC. 
+- Conditioning step using Ethanol is done without vortexing and combined immediately with the spin column binding step. Ethanol is added using 1000 ul tip and the solution is mixed directly by pipetting up and down, the mixture is transferred to spin column immediately after mixing (to prevent DNA sticking to the walls of old tube after conditioning).
+- The collection tubes are not changed until the last buffer-wash step is done. A new collection tube is used for the last drying step. The drying step is extended to 3 min at 11,000 g. 
+- Elution buffer is preheated to 70ºC. The elution step is repeated once (two times in total) while only adding 50 ul to the column each time. 

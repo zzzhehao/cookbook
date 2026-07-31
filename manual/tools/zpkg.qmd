@@ -1,0 +1,45 @@
+<!-- Synced from `/Users/hu_zhehao/Desktop/zzzhehao/manual/tools/zpkg.md` -->
+
+# Zhehao's R Packages
+
+As I already mentioned, R is my primary language in everyday work. After a few years, I have built sets of handy functions that I repeatedly use, directly or within other functions. So I started managing them in packages and made them open source. You are welcome to use them, and they are dependencies for many of my workflows. 
+
+## Utilities
+
+### `zhutilsr` Basic Utilities 
+
+Basic utilities in R, handles database interactions, ggplot theming, general file management, custom logic, data wrangling, quality-checking, and cleaning. Dependency for most of my other packages. 
+
+Install from GitHub:
+
+```r
+devtools::install_github("git@github.com:zzzhehao/zhutilsr.git")
+```
+
+### `zseq` Genetic Sequence Handling & Analysis
+
+Tools for sequence handling and analysis. 
+
+Importing and managing GenBank sequence and metadata via INSD XML file. Sequence I/O, metadata matching. Sanger sequence assembler (map to reference), alignment (local MAFFT) calculation, browsing, and editing, wrapper and interface to conventional tools (IQ-TREE, MrBayes, BEAST 2, ABGD, ASAP, GMYC, Gblocks), phylogenetic tree editing and visualization. 
+
+Install from GitHub:
+
+```r
+devtools::install_github("git@github.com:zzzhehao/zseq.git")
+```
+
+## Topic-specific
+
+### `rworms` Taxonomist-friendly R Interface for WoRMS
+
+Functions to retrieve taxonomy and distribution data from [World Register of Marine Species](https://www.marinespecies.org).
+
+Install from GitHub:
+
+```r
+devtools::install_github("git@github.com:zzzhehao/rworms.git")
+```
+
+Blog: 
+
+- [{rworms}: an R package for retrieving information from WoRMS](https://zzzhehao.github.io/post/research/techs/rworms.html) 

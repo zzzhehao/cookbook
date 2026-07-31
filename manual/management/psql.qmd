@@ -1,0 +1,11 @@
+<!-- Synced from `/Users/hu_zhehao/Desktop/zzzhehao/manual/management/psql.md` -->
+
+# PostgreSQL cheatsheet
+
+## Basic actions
+
+- `psql` to connect and open PostgreSQL interface. 
+- PostgreSQL always creates a `template1` databse for maintainance purposes, which should be kept and always connectable.
+- `\l` to list all database
+- `\q` to quite interface
+- \

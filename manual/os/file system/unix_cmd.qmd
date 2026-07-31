@@ -1,0 +1,28 @@
+<!-- Synced from `/Users/hu_zhehao/Desktop/zzzhehao/manual/os/file system/unix_cmd.md` -->
+
+# Unix Command Line Cheatsheet
+
+## File handling
+
+- `tar -xvf` can be used as a standard command to unpack `tar` file families. 
+	- `-j` flag to decompress `.tar.bz2` or other bzip-ed files
+	- `-z` flag to decompress `.tar.gz`, `tgz`, or other gzip-ed files
+
+
+# Unix Tools
+
+## Docker
+
+Containerized Linux environment on MacOS or Windows. 
+
+### Install
+
+Install the [Desktop App](https://www.docker.com/products/docker-desktop/), or via Homebrew
+
+```sh
+brew install --cask docker
+```
+
+### Alternative
+
+**Orbstack**: Lightweight program that intercepts all commands going to Docker and performs them. Also available via Homebrew: `brew install --cask orbstack`

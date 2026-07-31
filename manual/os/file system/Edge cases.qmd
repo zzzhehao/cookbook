@@ -1,0 +1,27 @@
+<!-- Synced from `/Users/hu_zhehao/Desktop/zzzhehao/manual/os/file system/Edge cases.md` -->
+
+# Edge Cases of Various Failures
+
+Sometimes you just encounter some very edge, deeply nested, unknown-origin errors, and the surface error message cannot really help you. We don't have the time to get ourselves a CS degree, but you have to solve those errors, because so is life. 
+
+## Failure in copying files (Windows, NTFS drive, files likely written by Unix-like OS)
+
+### Symptome
+
+- OS: Windows
+- Source & Destination file system: both NTFS drive
+- Action: copying `mov` files (ROV recordings) from one drive to the other drive.
+
+The core error message is "file name invalid or too long" or whatever that sounds like this. Drag'n'drop in file explorer throw this error, 7-zip File Manager, `robocopy` and `copy /B` too. Restart, change machine didn't work. In my case, using the latter tools has thrown a slightly different error messages (German) from Windows, which might come from a little deeper level: "Die Syntax für den Dateinamen, Verzeichnisnamen oder die Datenträgerbezeichnung ist falsch." `robocopy` report also tells you the error code `123 (0x0000007B)`. 
+
+### Cause
+
+Unix-Windows fight. Classic. Windows doesn't like Unix-like alt stream, which seems to be used by ROV system to store metadata. There were some characters in the alt streams of some files that Windows doesn't like, so the copy crashes at a very deep level within Windows. This is my guess: the ROV likely used Unix-like system (they are open source, and there were some characteristic phantom files in the drive) so they could write Unix-like style files on an NTFS drive without problem, but when I tried to mirror the drive on Windows those time bombs went kaboom. 
+
+### Solution
+
+Use `/COPY:DTX` flag in `robocopy`. `/COPY:X` let you skip all alt streams. When other uncorrupted files were already copied, supply with source and destination folder and `/E /COPY:DTX /XJ /XC /XN /XO` flags to only copy those corrupted files. 
+
+Or, follow the industry standard for file storage. What I learned from Schmidt Ocean is that use a NAS to store all ship data, end of discussion. No need to debate whether the hard drive should be in NTFS or APFS (or exFAT if data loss is acceptable), they are both the best option when dealing with the native system and they both suck immensely in cross-platform scenarios. Let the professional interface manage cross-platform conflicts, and once they are stored on the NAS, the end user never needs to touch the hard drive directly again, not to mention all the other data security and safety features natively come with a NAS. Imo an operation as large as a ROV-based expedition is worth investing in a 2- or even 4-bay NAS. 
+
+Time spent on solving this problem and all the collateral extra work: 5+ hours. 
