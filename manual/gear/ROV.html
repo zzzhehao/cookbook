@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Zhehao’s R Packages – Zhehao's Cookbook</title>
+<title>9&nbsp; ROV – Zhehao's Cookbook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../manual/tools/molspec_tools.html" rel="next">
-<link href="../../index.html" rel="prev">
+<link href="../../references.html" rel="next">
+<link href="../../manual/phylogeny/seq_align.html" rel="prev">
 <link href="../../logo/logo_300.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -118,7 +84,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manual/tools/zpkg.html">Tools</a></li><li class="breadcrumb-item"><a href="../../manual/tools/zpkg.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Zhehao’s R Packages</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manual/gear/ROV.html">Gear</a></li><li class="breadcrumb-item"><a href="../../manual/gear/ROV.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">ROV</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -158,16 +124,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Tools</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../manual/tools/zpkg.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../manual/tools/zpkg.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Zhehao’s R Packages</span></span></a>
   </div>
 </li>
@@ -250,16 +216,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Gear</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../manual/gear/ROV.html" class="sidebar-item-text sidebar-link">
+  <a href="../../manual/gear/ROV.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">ROV</span></span></a>
   </div>
 </li>
@@ -281,14 +247,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#utilities" id="toc-utilities" class="nav-link active" data-scroll-target="#utilities"><span class="header-section-number">1.1</span> Utilities</a>
+  <li><a href="#dive-planning" id="toc-dive-planning" class="nav-link active" data-scroll-target="#dive-planning"><span class="header-section-number">9.1</span> Dive Planning</a>
   <ul class="collapse">
-  <li><a href="#zhutilsr-basic-utilities" id="toc-zhutilsr-basic-utilities" class="nav-link" data-scroll-target="#zhutilsr-basic-utilities"><span class="header-section-number">1.1.1</span> <code>zhutilsr</code> Basic Utilities</a></li>
-  <li><a href="#zseq-genetic-sequence-handling-analysis" id="toc-zseq-genetic-sequence-handling-analysis" class="nav-link" data-scroll-target="#zseq-genetic-sequence-handling-analysis"><span class="header-section-number">1.1.2</span> <code>zseq</code> Genetic Sequence Handling &amp; Analysis</a></li>
-  </ul></li>
-  <li><a href="#topic-specific" id="toc-topic-specific" class="nav-link" data-scroll-target="#topic-specific"><span class="header-section-number">1.2</span> Topic-specific</a>
-  <ul class="collapse">
-  <li><a href="#rworms-taxonomist-friendly-r-interface-for-worms" id="toc-rworms-taxonomist-friendly-r-interface-for-worms" class="nav-link" data-scroll-target="#rworms-taxonomist-friendly-r-interface-for-worms"><span class="header-section-number">1.2.1</span> <code>rworms</code> Taxonomist-friendly R Interface for WoRMS</a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><span class="header-section-number">9.1.1</span> Objectives</a></li>
+  <li><a href="#route" id="toc-route" class="nav-link" data-scroll-target="#route"><span class="header-section-number">9.1.2</span> Route</a></li>
+  <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule"><span class="header-section-number">9.1.3</span> Schedule</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/zzzhehao/cookbook/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -296,9 +259,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manual/tools/zpkg.html">Tools</a></li><li class="breadcrumb-item"><a href="../../manual/tools/zpkg.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Zhehao’s R Packages</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../manual/gear/ROV.html">Gear</a></li><li class="breadcrumb-item"><a href="../../manual/gear/ROV.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">ROV</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Zhehao’s R Packages</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">ROV</span></h1>
 </div>
 
 
@@ -315,35 +278,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<!-- Synced from `/Users/hu_zhehao/Desktop/zzzhehao/manual/tools/zpkg.md` -->
-<p>As I already mentioned, R is my primary language in everyday work. After a few years, I have built sets of handy functions that I repeatedly use, directly or within other functions. So I started managing them in packages and made them open source. You are welcome to use them, and they are dependencies for many of my workflows.</p>
-<section id="utilities" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="utilities"><span class="header-section-number">1.1</span> Utilities</h2>
-<section id="zhutilsr-basic-utilities" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="zhutilsr-basic-utilities"><span class="header-section-number">1.1.1</span> <code>zhutilsr</code> Basic Utilities</h3>
-<p>Basic utilities in R, handles database interactions, ggplot theming, general file management, custom logic, data wrangling, quality-checking, and cleaning. Dependency for most of my other packages.</p>
-<p>Install from GitHub:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"git@github.com:zzzhehao/zhutilsr.git"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- Synced from `/Users/hu_zhehao/Desktop/zzzhehao/manual/gear/ROV.md` -->
+<section id="dive-planning" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="dive-planning"><span class="header-section-number">9.1</span> Dive Planning</h2>
+<p>Dives require thorough planning beforehand to achieve smooth and fast decision-making. All involved persons should be briefed with the route, geological, as well as biodiversity background of the dive spot, dive objectives, and dive schedules.</p>
+<section id="objectives" class="level3" data-number="9.1.1">
+<h3 data-number="9.1.1" class="anchored" data-anchor-id="objectives"><span class="header-section-number">9.1.1</span> Objectives</h3>
+<p><strong>What operations are going to be excuted during the dive?</strong> This question is normally very clear, often research cruises do exploratory dive with biological and geological samplings. In other cases, some dives have very specific objectives such as deploying or retrieving a lander system. The definition of the main objective of the dive affects all subsequent decisions.</p>
+<p><strong>Are there going to be sampling events?</strong> In case of an exploratory dive, this is usually <em>yes, very likely</em>. But a good plan tells <strong>what will be sampled</strong>. Therefore any reference data of the fauna at the diving area could be helpful for planning potential sampling targets. During MSM145, OFOS (Ocean Floor Obervation System) was usually deployed prior to the ROV to establish the knowledge of the benthic fauna and defining sampling target. It is always good to establish a <strong>wish list</strong> to aid corresponding scientist in communication with the ROV pilot to collect the right sample.</p>
+<p>If possible, the means of each collections should also be specified on the wish list, which would help decide <strong>what the ROV should be equipped with</strong>. Do we need shovels, hand nets, push cores, etc.? And how many of them?</p>
 </section>
-<section id="zseq-genetic-sequence-handling-analysis" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="zseq-genetic-sequence-handling-analysis"><span class="header-section-number">1.1.2</span> <code>zseq</code> Genetic Sequence Handling &amp; Analysis</h3>
-<p>Tools for sequence handling and analysis.</p>
-<p>Importing and managing GenBank sequence and metadata via INSD XML file. Sequence I/O, metadata matching. Sanger sequence assembler (map to reference), alignment (local MAFFT) calculation, browsing, and editing, wrapper and interface to conventional tools (IQ-TREE, MrBayes, BEAST 2, ABGD, ASAP, GMYC, Gblocks), phylogenetic tree editing and visualization.</p>
-<p>Install from GitHub:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"git@github.com:zzzhehao/zseq.git"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="route" class="level3" data-number="9.1.2">
+<h3 data-number="9.1.2" class="anchored" data-anchor-id="route"><span class="header-section-number">9.1.2</span> Route</h3>
+<p>ROV doesn’t dive blindly. It needs waypoints to illustrate a dive track. Place waypoints on important coordinates, such as locations of known features, points to guide a specific track, etc. ROV pilots usually follows the direct lines between waypoints, but due to bottom current and coordination with ships, the dive tracks usually does not follow those direct lines in real dives.</p>
+<p>To plan an ROV dive, a high-res bathymetry map is not required, but it requires a basic “usable” resolution (~20 m) map of the operating area. The reason for this is to identify dangerous features such as cliffs, high walls, etc. So that the ROV pilots are aware of the topology beforehand. An exploratory dive is always preferred to go uphills. Some ROV teams would even tell you that they would never accept a dive plan that mainly goes downhills. This is mainly a concern of snag risk of the tether cable, which is minimized when diving uphills, as the tether stays afloat in the water, while going downhills might expose the tether to bottom boulders, large hard corals or other features that can snag and damage the cable. Diving downhills is also unpleasant for exploratory purpose for scientists, because the main cameras and sonars are directed mainly forwards and slightly downwards, uphill terrain would fill the visual field and make use of most of the fly time, while diving downhills would make the seafloor always “disappearing” in visual field.</p>
+<p>For such reason, the elevation profile of the potential dive route should be considered and any steep slope or walls should preferably also be marked for the pilots.</p>
 </section>
-</section>
-<section id="topic-specific" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="topic-specific"><span class="header-section-number">1.2</span> Topic-specific</h2>
-<section id="rworms-taxonomist-friendly-r-interface-for-worms" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="rworms-taxonomist-friendly-r-interface-for-worms"><span class="header-section-number">1.2.1</span> <code>rworms</code> Taxonomist-friendly R Interface for WoRMS</h3>
-<p>Functions to retrieve taxonomy and distribution data from <a href="https://www.marinespecies.org">World Register of Marine Species</a>.</p>
-<p>Install from GitHub:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"git@github.com:zzzhehao/rworms.git"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Blog:</p>
-<ul>
-<li><a href="https://zzzhehao.github.io/post/research/techs/rworms.html">{rworms}: an R package for retrieving information from WoRMS</a></li>
-</ul>
+<section id="schedule" class="level3" data-number="9.1.3">
+<h3 data-number="9.1.3" class="anchored" data-anchor-id="schedule"><span class="header-section-number">9.1.3</span> Schedule</h3>
+<p>ROV pilots excute plans, but operation management is the scientists’ job. It is smart to have a rough estimation on the length of the dive and adjust objectives accordingly. Consult the pilots for normal transit speed for your dive objectives (whether spontaneously stops are wished, etc.).</p>
+<blockquote class="blockquote">
+<p><strong>Metrics from MSM145 with ROV Phoca as an example:</strong></p>
+<p>ROV Phoca has a maximum velocity of 2.5 knots forward and reverse, but for our exploratory purposes (filming of the seafloor, spontaneous stop for sampling and observation), we used a maximum of 0.5 knots as planning guidelines for ROV route. Post-cruise summary shows that the ROV in biological exploratory dives were underway with average speed from 0.28 to 0.37 knots (total seafloor distance / total seafloor time).</p>
+</blockquote>
+<p>Although it is possible to estimate a flytime of a path, collecting samples introduce a great variability in the total length of the dive at the end of the day. The decision here is individual per dive, depending on the objectives. But surprises can always happen, and the decision is also individual per dive, per cruise (a whale fall on the way? Are we going to stop and spend most of the time here or we mark the location and come back later?). But presumming the dive has no unexpected findings, it might also be smart to plan estimated ETAs of each waypoint to maintain schedule. Of course, open-end exploratory dive (we go as far as we can) is also an option.</p>
+<!-- ## Operation  -->
 
 
 </section>
@@ -964,13 +923,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../index.html" class="pagination-link" aria-label="Welcome">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      <a href="../../manual/phylogeny/seq_align.html" class="pagination-link" aria-label="Multiple Sequence Alignment (MSA)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Multiple Sequence Alignment (MSA)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../manual/tools/molspec_tools.html" class="pagination-link" aria-label="Molecular Species Delimitation Tools">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Molecular Species Delimitation Tools</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
