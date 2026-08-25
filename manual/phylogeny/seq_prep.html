@@ -42,8 +42,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-57a92833092fd6dc0d7710b6bdfff9c5.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-478a72f1aef919e99d33a595b1c9f6a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-fdeecb685437c12232ae1736852b4781.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-9a52fd220bdc23f86aec7d2f8e901fff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-a9810936bb7193d00583eb508f5a0a0e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -251,17 +251,24 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#de-novo-assembly" id="toc-de-novo-assembly" class="nav-link active" data-scroll-target="#de-novo-assembly"><span class="header-section-number">7.1</span> <em>De novo</em> assembly</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#import-and-assemble" id="toc-import-and-assemble" class="nav-link" data-scroll-target="#import-and-assemble"><span class="header-section-number">7.1.1</span> Import and assemble</a></li>
-  <li><a href="#cleaning-and-editing" id="toc-cleaning-and-editing" class="nav-link" data-scroll-target="#cleaning-and-editing"><span class="header-section-number">7.1.2</span> Cleaning and editing</a></li>
-  <li><a href="#building-consensus-checking-for-indels-and-reading-frames" id="toc-building-consensus-checking-for-indels-and-reading-frames" class="nav-link" data-scroll-target="#building-consensus-checking-for-indels-and-reading-frames"><span class="header-section-number">7.1.3</span> Building consensus, checking for indels and reading frames</a></li>
+  <li><a href="#extracting-the-contig" id="toc-extracting-the-contig" class="nav-link" data-scroll-target="#extracting-the-contig"><span class="header-section-number">7.1.2</span> Extracting the contig</a>
+  <ul class="collapse">
+  <li><a href="#how-to-select-the-extracting-region" id="toc-how-to-select-the-extracting-region" class="nav-link" data-scroll-target="#how-to-select-the-extracting-region"><span class="header-section-number">7.1.2.1</span> How to select the extracting region?</a></li>
+  <li><a href="#removing-artificial-gaps" id="toc-removing-artificial-gaps" class="nav-link" data-scroll-target="#removing-artificial-gaps"><span class="header-section-number">7.1.2.2</span> Removing artificial gaps</a></li>
+  <li><a href="#optional-brush-the-contigs" id="toc-optional-brush-the-contigs" class="nav-link" data-scroll-target="#optional-brush-the-contigs"><span class="header-section-number">7.1.2.3</span> Optional: brush the contigs</a></li>
+  </ul></li>
+  <li><a href="#assembly-check" id="toc-assembly-check" class="nav-link" data-scroll-target="#assembly-check"><span class="header-section-number">7.1.3</span> Assembly check</a>
+  <ul class="collapse">
+  <li><a href="#building-consensus-and-exploratory-msa" id="toc-building-consensus-and-exploratory-msa" class="nav-link" data-scroll-target="#building-consensus-and-exploratory-msa"><span class="header-section-number">7.1.3.1</span> Building consensus and exploratory MSA</a></li>
+  <li><a href="#sec-seqprep-indelcheck" id="toc-sec-seqprep-indelcheck" class="nav-link" data-scroll-target="#sec-seqprep-indelcheck"><span class="header-section-number">7.1.3.2</span> Cleaning indels</a></li>
+  <li><a href="#checking-the-reading-frame" id="toc-checking-the-reading-frame" class="nav-link" data-scroll-target="#checking-the-reading-frame"><span class="header-section-number">7.1.3.3</span> Checking the reading frame</a></li>
+  <li><a href="#checking-the-ambiguities" id="toc-checking-the-ambiguities" class="nav-link" data-scroll-target="#checking-the-ambiguities"><span class="header-section-number">7.1.3.4</span> Checking the ambiguities</a></li>
+  </ul></li>
   <li><a href="#export" id="toc-export" class="nav-link" data-scroll-target="#export"><span class="header-section-number">7.1.4</span> Export</a></li>
   </ul></li>
-  <li><a href="#assemble-by-reference" id="toc-assemble-by-reference" class="nav-link" data-scroll-target="#assemble-by-reference"><span class="header-section-number">7.2</span> Assemble by reference</a>
-  <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">7.2.1</span> </a></li>
-  </ul></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><span class="header-section-number">7.3</span> Resources</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><span class="header-section-number">7.2</span> Resources</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/zzzhehao/cookbook/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -288,196 +295,226 @@ ul.task-list li input[type="checkbox"] {
 
 
 <!-- Synced from `/Users/hu_zhehao/Desktop/zzzhehao/manual/phylogeny/seq_prep.md` -->
-<p>The analysis of the generated sequences require some basic knowledge on <a href="https://zzzhehao.github.io/notebook/">genetics, and phylogeny</a>.</p>
-<hr>
-<p>Macrogen EZSeq and Eurofins Lightrun both return sequences in <code>ab1</code>, <code>phy</code>, and <code>txt</code> file. <code>txt</code> file is the facility-exported sequence but considering how shitty the sequences sometimes can be, I never look at them because I need to manually check and clean them anyway. <code>phy</code> file is to me some ancient file type that none of my workflows use. Macrogen also returns <code>pdf</code> files with chromatograms, it’s wonderful to screen through to have a quick idea of whether the sequencing reaction went well or not. But the only file type that I am really interested in is the <code>ab1</code> file, also called the trace file, consider it as the “raw” data that contains the unedited information.</p>
-<p>But be careful, only the <code>ab1</code> files from the sequencing facility (so those created by Applied Biosystems) are the <em>real</em> <code>ab1</code> files. So yes, there are secondary generated <em>fake</em> <code>ab1</code> files, such as those you can download from BOLD project. They work mostly fine, but programs with stricter protocols (such as <code>sangeranalyseR</code> package) might find unwelcome characters and throw stubborn errors.</p>
+<p><a href="https://www.sigmaaldrich.com/DE/en/technical-documents/protocol/genomics/sequencing/sanger-sequencing?srsltid=AfmBOoq07kOGGftAUVHCILxP56F9dQ1HKqYXckunvZl2aBSxzGIiwG-P">How does Sanger Sequencing work?</a></p>
+<p>Macrogen EZSeq and Eurofins Lightrun both return sequences in <code>ab1</code>, <code>phy</code>, <code>pdf</code> and <code>txt</code> file. <code>txt</code> file is the facility-exported sequence but considering how shitty the sequences sometimes can be, I never look at them because I need to manually assemble the sequence anyway. <code>phy</code> file is to me some ancient file type that none of my workflows use. Macrogen also returns <code>pdf</code> files with chromatograms, it’s wonderful to screen through to have a quick idea of whether the sequencing reaction went well or not. But the only file type that I am really interested in is the <code>ab1</code> file, also called the trace file, consider it as the “raw” data that contains the unedited information.</p>
+<p>But be careful, only the <code>ab1</code> files from the sequencing facility (so those created by Applied Biosystems) are the <em>real</em> <code>ab1</code> files. So yes, there are secondary generated <em>fake</em> <code>ab1</code> files, such as those you can download from BOLD project as “original trace”. They work mostly fine, but programs with stricter protocols (such as <code>sangeranalyseR</code> package) might find unwelcome characters and throw stubborn errors.</p>
 <p>I have tried to reduce the manual part in the workflow as much as possible, even to make it completely automated, but it turns out to be almost impossible, or it would sacrifice the integrity of our work. There must be a graphical interface at some point for us to check and manually edit the sequence because the various errors generated by low sequencing quality are not rare cases, but rather normal scenarios. Making an error-solving program was not very feasible since there’s always some surprise that can break generalized functions, and coding specialized functions makes no sense to me because then why not manually check them?</p>
-<p>My group currently uses <a href="https://www.geneious.com">Geneious</a>, but you have to pay (quite a lot) for most of the features (starting from the next section). I am sure there are alternative programs out there but I didn’t have the time to find the whole suite that can replace Geneious without making me spend double the time on the same task. So consider paying for Geneious seems not a bad idea.</p>
+<p>My group currently uses <a href="https://www.geneious.com">Geneious</a>, but you have to pay (quite some money) for most of the features (starting from the next section). I am sure there are alternative programs out there but I didn’t have the time to find the whole suite that can replace Geneious without making me spend double the time on the same task. So consider paying for Geneious seems not a bad idea.</p>
 <section id="de-novo-assembly" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="de-novo-assembly"><span class="header-section-number">7.1</span> <em>De novo</em> assembly</h2>
-<p>There are two different ways to assemble sequencing reads into contigs (= “sequence” that we will use to run analysis). If the sequencing reads have a lot of overlap (e.g.&nbsp;in COI, both reads were essentially sequencing the same region), we can reconstruct the contig by only using the sequences at hand.</p>
+<p>Some terminologies first, each <em>sequencing reaction</em> produce a trace file, which contains the raw fluorescence signal intensity (electrophoretogram, also called chromatogram) and the interpreted DNA sequence, they are continuous until reaching a point no interpretation can be made due to low SNR (signal-noise-ratio), and this is one <strong>read</strong>, it always goes from 5’ end to 3’ end. Reads can overlap with each other, so if we align them and produce a longer sequence, it becomes a <strong>contig</strong>, contigs are continuous too. Everything beyond contigs (e.g., scaffolds) will become part of genome assembly.</p>
+<p>In barcoding, there are two main ways to assemble reads into contigs. If the sequencing reads have a lot of overlap (e.g.&nbsp;in COI, both reads were essentially sequencing the same region), we can reconstruct the contig by only using the sequences at hand, and it’s called <strong><em>de novo</em> assembly</strong>.</p>
 <section id="import-and-assemble" class="level3" data-number="7.1.1">
 <h3 data-number="7.1.1" class="anchored" data-anchor-id="import-and-assemble"><span class="header-section-number">7.1.1</span> Import and assemble</h3>
 <p>Once the files are imported into Geneious, they are shown as sequencing reads.</p>
-<p><a href="assets/01import.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="assets/01import.png" class="img-fluid"></a></p>
-<p>Opening individual files will show their chromatograms:</p>
-<p><a href="assets/02chrom.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="assets/02chrom.png" class="img-fluid"></a></p>
-<p>Assuming the files are named in a certain format, for example, mine is “&lt;sample_name&gt;_&lt;primer&gt;_&lt;sequencing_run_info&gt;”. A consistent and reasonable naming rule is important (throughout the entire life, actually). The benefit is that you can simply select all of them and click <strong>De Novo Assemble</strong>, and you can tell Geneious how to group your reads following your naming rules.</p>
-<p><a href="assets/03denovo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="assets/03denovo.png" class="img-fluid"></a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/03denovomenu.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="De Novo assemble menu"><img src="assets/03denovomenu.png" class="img-fluid figure-img" style="width:70.0%" alt="De Novo assemble menu"></a></p>
-<figcaption><em>De Novo</em> assemble menu</figcaption>
+<p><a href="assets/01import.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Geneious window, upper part shows the files in the project folder, lower part shows the content of the file. Here they are all trace files, therefore reads with quality measures"><img src="assets/01import.png" class="img-fluid figure-img" alt="Geneious window, upper part shows the files in the project folder, lower part shows the content of the file. Here they are all trace files, therefore reads with quality measures"></a></p>
+<figcaption>Geneious window, upper part shows the files in the project folder, lower part shows the content of the file. Here they are all trace files, therefore reads with quality measures</figcaption>
+</figure>
+</div>
+<p>Opening individual files will show their chromatograms:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/02chrom.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="A very standard sanger sequencing chromatogram. Every color corresponds to one type of base. A successful read starts with ~50 bp bad quality bases due to dye blobs, then a large region of good, clean, non-ambiguous bases, until it reaches maximal sequencing length (from 500 to 1000 bp for Sanger sequencing), or the end of target fragments"><img src="assets/02chrom.png" class="img-fluid figure-img" alt="A very standard sanger sequencing chromatogram. Every color corresponds to one type of base. A successful read starts with ~50 bp bad quality bases due to dye blobs, then a large region of good, clean, non-ambiguous bases, until it reaches maximal sequencing length (from 500 to 1000 bp for Sanger sequencing), or the end of target fragments"></a></p>
+<figcaption>A very standard sanger sequencing chromatogram. Every color corresponds to one type of base. A successful read starts with ~50 bp bad quality bases due to dye blobs, then a large region of good, clean, non-ambiguous bases, until it reaches maximal sequencing length (from 500 to 1000 bp for Sanger sequencing), or the end of target fragments</figcaption>
+</figure>
+</div>
+<p>The assembly function is very simple, select reads from the same sample, right-click &gt; <strong>De Novo Assemble…</strong></p>
+<p>But you get extra award if you name your files in a reasonable and consistent format, for example, mine is “&lt;sampleName&gt;_&lt;primerName&gt;_&lt;sequencingRunInfo&gt;” (and no extra underscores in my sample or primer name). The benefit is that you can simply select all reads and tell Geneious how to group them by samples following the naming rules.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/03denovo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="To de novo assemble, right-click > De Novo Assemble.."><img src="assets/03denovo.png" class="img-fluid figure-img" alt="To de novo assemble, right-click > De Novo Assemble.."></a></p>
+<figcaption>To <em>de novo</em> assemble, right-click &gt; De Novo Assemble..</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/03denovomenu.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="De Novo assemble menu. Use setting sunder “Data” section to tell Geneious how to recognize the sample name. The recognized sample name can be called in “Results” secion for assembly name by referring to as {Reads Name}"><img src="assets/03denovomenu.png" class="img-fluid figure-img" style="width:70.0%" alt="De Novo assemble menu. Use setting sunder “Data” section to tell Geneious how to recognize the sample name. The recognized sample name can be called in “Results” secion for assembly name by referring to as {Reads Name}"></a></p>
+<figcaption><em>De Novo</em> assemble menu. Use setting sunder “Data” section to tell Geneious how to recognize the sample name. The recognized sample name can be called in “Results” secion for assembly name by referring to as <code>{Reads Name}</code></figcaption>
 </figure>
 </div>
 <p>We do not let the assembler trim the reads as we will do it manually later, and we want the assembly to be saved as contigs. The others can stay as the default. A report will be generated, and you might see that some sequences with low quality reads from both direction failed in generating contigs.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/04denovorep.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="04denovorep"><img src="assets/04denovorep.png" class="img-fluid figure-img" style="width:40.0%" alt="04denovorep"></a></p>
-<figcaption>04denovorep</figcaption>
+<p><a href="assets/04denovorep.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Assembly report"><img src="assets/04denovorep.png" class="img-fluid figure-img" style="width:40.0%" alt="Assembly report"></a></p>
+<figcaption>Assembly report</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/06badread.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="ZHH044 with bad reads in both directions, which made the assembly to fail."><img src="assets/06badread.png" class="img-fluid figure-img" alt="ZHH044 with bad reads in both directions, which made the assembly to fail."></a></p>
-<figcaption><em>ZHH044</em> with bad reads in both directions, which made the assembly to fail.</figcaption>
+<p><a href="assets/06badread.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="ZHH044 had bad reads in both directions, which made the assembly fail"><img src="assets/06badread.png" class="img-fluid figure-img" alt="ZHH044 had bad reads in both directions, which made the assembly fail"></a></p>
+<figcaption><em>ZHH044</em> had bad reads in both directions, which made the assembly fail</figcaption>
 </figure>
 </div>
-<p>Opening one of the assembled contig, you see that the two reads are overlapping at the head region (5’) of each read, meaning that they match with each other (since they were sequencing the same fragment).</p>
+<p>Opening one of the assembled contig, you see that the two reads are overlapping at the head region (5’) of each read, meaning that they match (align) with each other in that region. Which is logical for our COI barcoding, because both reads were sequencing the same fragment, but the opposite strands.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/05denovocontigsing.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="05denovocontigsing"><img src="assets/05denovocontigsing.png" class="img-fluid figure-img" alt="05denovocontigsing"></a></p>
-<figcaption>05denovocontigsing</figcaption>
-</figure>
-</div>
-</section>
-<section id="cleaning-and-editing" class="level3" data-number="7.1.2">
-<h3 data-number="7.1.2" class="anchored" data-anchor-id="cleaning-and-editing"><span class="header-section-number">7.1.2</span> Cleaning and editing</h3>
-<p>Enlarging the view shows us that both reads are still treated as traces, and this is a huge advantage because the confidence of the consensus shown on the top can be assessed by also accounting each base’s sequencing quality.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/06denovodetail.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="06denovodetail"><img src="assets/06denovodetail.png" class="img-fluid figure-img" alt="06denovodetail"></a></p>
-<figcaption>06denovodetail</figcaption>
-</figure>
-</div>
-<p>At this view, we will select the reagion where a good consensus can be calculated because at least one of the both reads has good quality. Make sure to select both sequences, and we would extract selected regions into a new file.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/07denovoex.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="07denovoex"><img src="assets/07denovoex.png" class="img-fluid figure-img" alt="07denovoex"></a></p>
-<figcaption>07denovoex</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/07denovoexgl.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="07denovoexgl"><img src="assets/07denovoexgl.png" class="img-fluid figure-img" alt="07denovoexgl"></a></p>
-<figcaption>07denovoexgl</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/08denovoex.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Right-click on the selected region to extract. Make sure to extract region as contig too."><img src="assets/08denovoex.png" class="img-fluid figure-img" alt="Right-click on the selected region to extract. Make sure to extract region as contig too."></a></p>
-<figcaption>Right-click on the selected region to extract. Make sure to extract region as contig too.</figcaption>
-</figure>
-</div>
-<p>This step is essentially trimming the sequence, but doing it after the <em>de novo</em> assembly gives us advantages over trimming it before the assembly. Sometimes the reads are not as good as the ones we’ve seen here, most of their reads might just get discarded by the trimming algorithm, but if we assemble them anyway, we can still get a pretty good (at least useful) result by cross-checking the ambiguities with the reads from the other direction:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/08justmadeit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="08justmadeit"><img src="assets/08justmadeit.png" class="img-fluid figure-img" alt="08justmadeit"></a></p>
-<figcaption>08justmadeit</figcaption>
-</figure>
-</div>
-<p>After extracting the contigs, we go into details to do some manual clean-up. Since we didn’t trim the reads before assembly, it also comes with trade-offs. The first few bases of Sanger sequencing are always shitty, the reason is the dye blobs. And these reads confuse the assembler, so there are gaps <code>-</code> inserted into the consensus (also into the complement read). They are purely artificial, we have to remove them. It can be easily done by selecting the consensus (not the individual sequence) and deleting it. You will probably get a warning window telling you how to edit the sequence, so from now on you have to pay attention to the keyboard: do not type unconsciously.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/09removegap1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="09removegap1"><img src="assets/09removegap1.png" class="img-fluid figure-img" alt="09removegap1"></a></p>
-<figcaption>09removegap1</figcaption>
-</figure>
-</div>
-<p>We remove all the gaps in the consensus at the beginning, and also at the end of the contig. You will see a red mark indicating deletion.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/10removegap.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="10removegap"><img src="assets/10removegap.png" class="img-fluid figure-img" alt="10removegap"></a></p>
-<figcaption>10removegap</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/11removegap.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="11removegap"><img src="assets/11removegap.png" class="img-fluid figure-img" alt="11removegap"></a></p>
-<figcaption>11removegap</figcaption>
-</figure>
-</div>
-<p>Sometimes the gap is indicated as ambiguity <code>N</code> when the wrong reads somehow produced a good quality and convinced the algorithm that there might be something. But we know from the context and chromatogram that it’s the same as <code>-</code> gap, so we delete them too.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/12Ngap.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="12Ngap"><img src="assets/12Ngap.png" class="img-fluid figure-img" alt="12Ngap"></a></p>
-<figcaption>12Ngap</figcaption>
-</figure>
-</div>
-<p>In a cleaned contig, ambiguities are allowed, but there should not be any <code>-</code> gaps in its consensus. After cleaning the gaps, there’s one last thing to pay attention to. Any idea what’s wrong with this contig?</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/13wrongdir.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="13wrongdir"><img src="assets/13wrongdir.png" class="img-fluid figure-img" alt="13wrongdir"></a></p>
-<figcaption>13wrongdir</figcaption>
-</figure>
-</div>
-<p>Left to the read file name, we see two marks: <code>FWD</code> and <code>REV</code>, stands for “forward” and “reverse”. We know that LCO1490 is the forward primer, and HCO2198 is the reverse primer. Exactly, the direction marks are reversed in this contig, so we have to reverse-complement the entire contig to put it in the right direction.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/14reversecomplement.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="14reversecomplement"><img src="assets/14reversecomplement.png" class="img-fluid figure-img" alt="14reversecomplement"></a></p>
-<figcaption>14reversecomplement</figcaption>
-</figure>
-</div>
-<p>Some people do not do this step because many algorithms for multiple sequence alignment (MSA) nowadays can resolve the direction automatically. But skipping this step can become a time bomb if your analysis does not input the alignments you produce later. And it would be a lot of pain if you want to check anything in detail later. So be kind to yourself, spend a few seconds to check it. I couldn’t find any settings in Geneious where I might be able to specify the forward / reverse primer when performing the <em>de novo</em> assembly. If anyone knows, please do let me know, because it seems quite unreal that software like Geneious doesn’t have that feature.</p>
-<p>Once we have the direction solved, we are ready. You might also find some <a href="https://www.bioinformatics.org/sms/iupac.html">ambiguities</a> in your contigs. They are fine for now and we will deal with them later, because we don’t have enough information to resolve them at this point.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/16ambiguity.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="16ambiguity"><img src="assets/16ambiguity.png" class="img-fluid figure-img" alt="16ambiguity"></a></p>
-<figcaption>16ambiguity</figcaption>
+<p><a href="assets/05denovocontigsing.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Overview of an assembled contig"><img src="assets/05denovocontigsing.png" class="img-fluid figure-img" alt="Overview of an assembled contig"></a></p>
+<figcaption>Overview of an assembled contig</figcaption>
 </figure>
 </div>
 </section>
-<section id="building-consensus-checking-for-indels-and-reading-frames" class="level3" data-number="7.1.3">
-<h3 data-number="7.1.3" class="anchored" data-anchor-id="building-consensus-checking-for-indels-and-reading-frames"><span class="header-section-number">7.1.3</span> Building consensus, checking for indels and reading frames</h3>
-<p>Since we have assembled the contig, we will make consensus sequences from the contigs and stop dealing with traces. Right-click the checked contigs and run “Generate Consensus Sequence”.</p>
+<section id="extracting-the-contig" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="extracting-the-contig"><span class="header-section-number">7.1.2</span> Extracting the contig</h3>
+<p>Enlarging the view shows us that both reads are still treated as traces, and this is why we only <code>ab1</code> file. The concensus base calls shown at the top are also marked with quality measurement, and it accounts quality measurements directly from the chromatograms.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/17consensusmenu.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="17consensusmenu"><img src="assets/17consensusmenu.png" class="img-fluid figure-img" style="width:40.0%" alt="17consensusmenu"></a></p>
-<figcaption>17consensusmenu</figcaption>
+<p><a href="assets/06denovodetail.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Enlarged view of a contig"><img src="assets/06denovodetail.png" class="img-fluid figure-img" alt="Enlarged view of a contig"></a></p>
+<figcaption>Enlarged view of a contig</figcaption>
 </figure>
 </div>
-<p>With the built consensus, we can then run a multiple sequence alignment (MSA) and compare the sequences with each other. An important note here is that we run MSA here for quality check and exploratory purposes, not to build the final working alignment for analysis (we will do that later).</p>
+<p>At this view, we will select the region where a good consensus can be calculated. Make sure to select both reads, and we would extract selected regions into a new file.</p>
+<p>There are no hard thresholds or rules defining from where to where should be selected, the main idea is to select a region with acceptable base call qualities. So in the previous screenshot, I persoannly would start from position 798, and in the following screenshot I would stop at position 1433. The reason is that from 798, the consensus base calls are becoming higher (although there two inserted ambiguities, but they are resolvable, see <a href="#sec-seqprep-indelcheck" class="quarto-xref"><span>Section 7.1.3.2</span></a>) and from 1433, the quality drops rapidly, not only because the upper reads ended, but the quality of the lower reads dropped too.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/19MSA1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="19MSA1"><img src="assets/19MSA1.png" class="img-fluid figure-img" alt="19MSA1"></a></p>
-<figcaption>19MSA1</figcaption>
+<p><a href="assets/07denovoex.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Make sure to select both reads"><img src="assets/07denovoex.png" class="img-fluid figure-img" alt="Make sure to select both reads"></a></p>
+<figcaption>Make sure to select both reads</figcaption>
 </figure>
 </div>
-<p>There are several MSA algorithms to choose from. You may call me cult but I simply recommend MAFFT, also for later, as long as your dataset is not extreme (large number of sequences or loci, wide range of taxa so that sequence evolution plays a significant role, etc.). Before the first use, you need to download the MAFFT plugin from Geneious to see the option. For our purpose now, we can leave all the parameters at the default. You can notice the difference in the placement of the sequences in the alignment view compared to just selecting all consensus sequences.</p>
+<p>Then we can right-click the selected region &gt; Extract Region …, make sure to extract region as contig too, so the reads are still treated as traces.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/20alnview1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="20alnview1"><img src="assets/20alnview1.png" class="img-fluid figure-img" alt="20alnview1"></a></p>
-<figcaption>20alnview1</figcaption>
+<p><a href="assets/08denovoex.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Right-click on the selected region to extract"><img src="assets/08denovoex.png" class="img-fluid figure-img" alt="Right-click on the selected region to extract"></a></p>
+<figcaption>Right-click on the selected region to extract</figcaption>
+</figure>
+</div>
+<section id="how-to-select-the-extracting-region" class="level4" data-number="7.1.2.1">
+<h4 data-number="7.1.2.1" class="anchored" data-anchor-id="how-to-select-the-extracting-region"><span class="header-section-number">7.1.2.1</span> How to select the extracting region?</h4>
+<p>Generally, I avoid including too many base calls with low confidence in consensus (those with dark blue color), except they are resolvable (e.g., due to a shift of one certain base in chromatogram, or the signal of a position “leaks” into its neighbours, etc.). Sometimes determining whether a low base call quality is a resolvable artefact or not requires thorough understanding of how the chromatogram was generated and what could possibly happen during the process. It is not possible to cover all chromatogram pattern you might see, but if you understand how those signals were produced, you would then be able to resolve obvious technical flaws and identify errors that can’t be resolved.</p>
+<p>A typical example of such thinking is that if there was a quality drop (individually or continuously) within a homopolymer or tandem repeat (e.g., <code>TTTTTTTT</code>, <code>CGCGCGCG</code>) near the start or the end of the contig (without validation from the reverse-complement read), it’s better to exclude the whole repeat region rather than keeping it. Because if any signal shifts in those bases happens, it’s almost impossible to verify and determine the exact number of repeats when the both neighbouring positions have the same base, because shifted, leaked, or merged signals produce the same look. Of course, if you have already read <a href="#sec-seqprep-indelcheck" class="quarto-xref"><span>Section 7.1.3.2</span></a>, you might notice that in some cases, you can actually verify and resolve them (very closely related taxa and enough number of sequences, target is protein-coding gene). It highlights that this decision process depends on quite a few aspects and also the goal of obtaining the information. It’s all about finding a balance between <em>extracting as much information as possible</em> and <em>avoid as much junk information as possible</em>.</p>
+<p>If we go really deep into details, you will also start thinking whether resolving (struggling at) some base calls is actually worth the time, considering the potential of that base being a parsimony-uninformative site in your alignment, or amplifying the risk of introducing artificial error due to codon-bias, etc. So my philosophy in dealing with this step is: keep it consistent and reasonable, but also keep it simple. And I always choose short but clean reads over long but potentially flawed reads.</p>
+<p>Extracting the contig reagion is essentially trimming the reads, but doing it after the <em>de novo</em> assembly gives us an advantages: sometimes the reads are not as good as the ones we’ve seen here, a big part of the reads might just get discarded by the trimming algorithm, but if we assemble them anyway, we can still get a pretty good (at least useful) result by cross-checking the ambiguities with the reads from the other direction:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/08justmadeit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Two poor reads still managed to produce a usable consensus sequence"><img src="assets/08justmadeit.png" class="img-fluid figure-img" alt="Two poor reads still managed to produce a usable consensus sequence"></a></p>
+<figcaption>Two poor reads still managed to produce a usable consensus sequence</figcaption>
+</figure>
+</div>
+</section>
+<section id="removing-artificial-gaps" class="level4" data-number="7.1.2.2">
+<h4 data-number="7.1.2.2" class="anchored" data-anchor-id="removing-artificial-gaps"><span class="header-section-number">7.1.2.2</span> Removing artificial gaps</h4>
+<p>After extracting the contigs, we need to do some manual clean-ups. The first few bases of Sanger sequencing are always shitty, it’s because of the dye blobs. And these shitty signals confuse the assembler, which inserts gaps <code>-</code> into the consensus. They are purely artificial, so we have to remove them. It can be easily done by selecting the consensus (not the individual sequence) and deleting it. You will probably get a warning window telling you how to edit the sequence properly, so from now on you have to pay attention to the keyboard: do not type unconsciously. Also remember to save your edits.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/09removegap1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Gaps inserted in consensus (position 27, 29)"><img src="assets/09removegap1.png" class="img-fluid figure-img" alt="Gaps inserted in consensus (position 27, 29)"></a></p>
+<figcaption>Gaps inserted in consensus (position 27, 29)</figcaption>
+</figure>
+</div>
+<p>We remove all the gaps in the consensus at the beginning and the end of the contig. You will see a red mark indicating deletion.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/10removegap.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="All gaps removed. Ignore those gaps only existing in the lower read, they are inserted because the assembler trusts the better-quality upper read more, so it inserts gaps to the position in the lower read (where there should be complement signal of the same bases but it’s still inside the “shitty zone” of the lower read)"><img src="assets/10removegap.png" class="img-fluid figure-img" alt="All gaps removed. Ignore those gaps only existing in the lower read, they are inserted because the assembler trusts the better-quality upper read more, so it inserts gaps to the position in the lower read (where there should be complement signal of the same bases but it’s still inside the “shitty zone” of the lower read)"></a></p>
+<figcaption>All gaps removed. Ignore those gaps only existing in the lower read, they are inserted because the assembler trusts the better-quality upper read more, so it inserts gaps to the position in the lower read (where there should be complement signal of the same bases but it’s still inside the “shitty zone” of the lower read)</figcaption>
+</figure>
+</div>
+<p>Sometimes the gap is indicated as ambiguity <code>N</code> when the signal from the “shitty zone” somehow produced a good quality and convinced the algorithm that there might be something. But we know from the context and chromatogram that it’s still in the “shitty zone”, and it’s essentially the same as a <code>-</code> gap, so we delete them too.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/12Ngap.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="An ambiguity N instead of a gap - was inserted, but they are essentially the same here"><img src="assets/12Ngap.png" class="img-fluid figure-img" alt="An ambiguity N instead of a gap - was inserted, but they are essentially the same here"></a></p>
+<figcaption>An ambiguity <code>N</code> instead of a gap <code>-</code> was inserted, but they are essentially the same here</figcaption>
+</figure>
+</div>
+<p>You might also find some other <a href="https://www.bioinformatics.org/sms/iupac.html">ambiguities</a> in your contigs. We will deal with them later as we don’t have enough information to resolve them at this point.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/16ambiguity.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="An ambiguity K (Keto, G or T) was inserted, as the assembler wasn’t certain which read to trust"><img src="assets/16ambiguity.png" class="img-fluid figure-img" alt="An ambiguity K (Keto, G or T) was inserted, as the assembler wasn’t certain which read to trust"></a></p>
+<figcaption>An ambiguity <code>K</code> (Keto, G or T) was inserted, as the assembler wasn’t certain which read to trust</figcaption>
+</figure>
+</div>
+</section>
+<section id="optional-brush-the-contigs" class="level4" data-number="7.1.2.3">
+<h4 data-number="7.1.2.3" class="anchored" data-anchor-id="optional-brush-the-contigs"><span class="header-section-number">7.1.2.3</span> Optional: brush the contigs</h4>
+<p>After cleaning the gaps, there’s one last thing to pay attention to. Any idea what’s wrong with this contig?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/13wrongdir.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Which primer is forward, and which is reverse?"><img src="assets/13wrongdir.png" class="img-fluid figure-img" alt="Which primer is forward, and which is reverse?"></a></p>
+<figcaption>Which primer is forward, and which is reverse?</figcaption>
+</figure>
+</div>
+<p>Left to the read file name, we see two marks: <code>FWD</code> and <code>REV</code>, stands for “forward” and “reverse”. We know that LCO1490 is the forward primer, and HCO2198 is the reverse primer - the direction marks are reversed in this contig, so we have to reverse-complement the entire contig to put it in the right direction.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/14reversecomplement.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="Reverse complement the whole contig"><img src="assets/14reversecomplement.png" class="img-fluid figure-img" alt="Reverse complement the whole contig"></a></p>
+<figcaption>Reverse complement the whole contig</figcaption>
+</figure>
+</div>
+<p>Some people do not do this step because many algorithms of multiple sequence alignment (MSA) nowadays can resolve the direction automatically, but they do not know how the gene should look like, and sometimes you would get a whole alignment of reverse-complemented sequence. I deliberately added “optional” to this section but I strongly recommend to do this. Skipping this step can become a time bomb if you want to check anything in detail later.</p>
+<p>I couldn’t find any settings in Geneious where I might be able to specify the forward / reverse primer when performing the <em>de novo</em> assembly. If anyone knows, please do let me know. It seems quite surreal that software like Geneious doesn’t have that feature.</p>
+</section>
+</section>
+<section id="assembly-check" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="assembly-check"><span class="header-section-number">7.1.3</span> Assembly check</h3>
+<section id="building-consensus-and-exploratory-msa" class="level4" data-number="7.1.3.1">
+<h4 data-number="7.1.3.1" class="anchored" data-anchor-id="building-consensus-and-exploratory-msa"><span class="header-section-number">7.1.3.1</span> Building consensus and exploratory MSA</h4>
+<p>Since we have assembled the contig, we will make consensus sequences from the contigs. Right-click the checked contigs and run “Generate Consensus Sequence”.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/17consensusmenu.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="Generate Consensus menu, use the highest quality threshold"><img src="assets/17consensusmenu.png" class="img-fluid figure-img" style="width:40.0%" alt="Generate Consensus menu, use the highest quality threshold"></a></p>
+<figcaption>Generate Consensus menu, use the highest quality threshold</figcaption>
+</figure>
+</div>
+<p>With the built consensus, we can then run a multiple sequence alignment (MSA) and compare the sequences with each other. Note: this is not the actual MSA step for subsequent analysis, it’s an exploratory step to check the assembly.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/19MSA1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Select all consensus sequences and run Multiple Align …"><img src="assets/19MSA1.png" class="img-fluid figure-img" alt="Select all consensus sequences and run Multiple Align …"></a></p>
+<figcaption>Select all consensus sequences and run <em>Multiple Align …</em></figcaption>
+</figure>
+</div>
+<p>There are several MSA algorithms to choose from. You may call me cult but I simply recommend <a href="https://mafft.cbrc.jp/">MAFFT</a>. Before the first use, you need to download the MAFFT plugin from Geneious to see the option. For our purpose now, we can leave all the parameters at the default. You can notice the difference in the placement of the sequences in the alignment view compared to just selecting all consensus sequences.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/20alnview1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Window for viewing the alignment"><img src="assets/20alnview1.png" class="img-fluid figure-img" alt="Window for viewing the alignment"></a></p>
+<figcaption>Window for viewing the alignment</figcaption>
 </figure>
 </div>
 <p>Enlarging the alignment and chaging the display setting also let you see in details.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/20alnview2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23" title="20alnview2"><img src="assets/20alnview2.png" class="img-fluid figure-img" alt="20alnview2"></a></p>
-<figcaption>20alnview2</figcaption>
+<p><a href="assets/20alnview2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="Enlarged view of the alignment. Options on the right sidebar can change how the alignment is highlighted"><img src="assets/20alnview2.png" class="img-fluid figure-img" alt="Enlarged view of the alignment. Options on the right sidebar can change how the alignment is highlighted"></a></p>
+<figcaption>Enlarged view of the alignment. Options on the right sidebar can change how the alignment is highlighted</figcaption>
 </figure>
 </div>
-<p>From this point, you need to have a basic understanding of the <a href="https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology">Central Dogma of Molecular Biology</a>.</p>
-<p>But what we are interested in is the one inserted <code>K</code>, also visible in the shrunken view. We see that the <code>K</code> only appears in one sequence and the positions in the rest are marked as gap <code>-</code>, and this is a classical <em>insertion</em>. Insertions and deletions are called together as <em>indel</em>. Indel naturally happens in sequence evolution, but not in this fashion. COI (cytochrome oxidase subunit I) gene is, as the name already says, a protein-coding gene, which means the nucleotide sequence has reading frames. And the reading frames of the eukaryotic lifeforms on this planet (most, if there are exceptions that I don’t know of) are all triplets, i.e., every three bases are translated into an amino acid. That means a 1 bp insertion will mess up all the downstream translation and probably change most of the downstream amino acid sequence, and we call such an insertion a <a href="https://en.wikipedia.org/wiki/Frameshift_mutation">“frameshift” mutation</a> (indels that are not a multiple of three). This will result in a huge change in protein functionality that most certainly comes with enormous selection forces. Simply put, this does not happen easily, and even if it happens, it is very hard for it to survive. To prove such an insertion is real, multiple lines of evidence are required to explain and support it.</p>
+</section>
+<section id="sec-seqprep-indelcheck" class="level4" data-number="7.1.3.2">
+<h4 data-number="7.1.3.2" class="anchored" data-anchor-id="sec-seqprep-indelcheck"><span class="header-section-number">7.1.3.2</span> Cleaning indels</h4>
+<p>From this point, you need to have a basic understanding of the <a href="https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology">Central Dogma of Molecular Biology</a>, particularly how does a protein-coding gene become an actual protein.</p>
+<p>Still remember the one inserted <code>K</code> from earlier? We can find that ambiguity in the alignment too. We see that the <code>K</code> only appears in one sequence and the positions in the rest are marked as gap <code>-</code>. These are not the gaps we forgot to clean, they are new gaps inserted by MSA algorithm, because the rest of the sequences align with each other better when this <code>K</code> is treated as an extra in its sequence. This is an <em><strong>insertion</strong></em>. It’s counterpart is <strong><em>deletion</em></strong>, where bases are missing comparing to others. Insertions and deletions are called together as <strong><em>indel</em></strong>. In this example, the insertion happens to be am ambiguity, but it can also be a well-supported base just like the others.</p>
+<p>Indel naturally happens in sequence evolution, but rarely in this fashion. COI (cytochrome oxidase subunit I) gene is, as the name already says, a protein-coding gene, which means the nucleotide sequence has <strong>reading frames</strong> (read by tRNA). And the reading frames of the eukaryotic lifeforms on this planet (most, if there are exceptions that I don’t know of) are all triplets, i.e., every three bases are translated into one amino acid. That means a 1-bp insertion will mess up all the downstream translation, we call such an insertion a <a href="https://en.wikipedia.org/wiki/Frameshift_mutation">“frameshift” mutation</a> (indels with length that is not a multiple of three). This will result in a huge change in protein functionality that most certainly comes with enormous selection forces, especially for protein like COI. <a href="https://en.wikipedia.org/wiki/Cytochrome_c_oxidase">Cytochrome oxidase</a> is a key component in the respiratory chain reaction, and if a cell can’t breath, it dies. So the COI must work, from gene to protein. Simply put, such indels can happen, but the selection pressure will likely make it hard to survive and amplify. To prove such an insertion is real, multiple lines of evidence are required to explain and support it.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/21insert.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24" title="21insert"><img src="assets/21insert.png" class="img-fluid figure-img" alt="21insert"></a></p>
-<figcaption>21insert</figcaption>
+<p><a href="assets/21insert.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="The insertion in the alignment is usually very easy to spot"><img src="assets/21insert.png" class="img-fluid figure-img" alt="The insertion in the alignment is usually very easy to spot"></a></p>
+<figcaption>The insertion in the alignment is usually very easy to spot</figcaption>
 </figure>
 </div>
-<p>Given that our insertion is ambiguous, we can be very certain that it is purely artificial. By selecting the base, the information shown in the bottom left corner tells you where to find the base. We go back to the original sequence and find base 597, and it is exactly the <code>K</code> that we mentioned before.</p>
+<p>Given that our insertion is ambiguous, we can be very certain that it is an artefact. By selecting the base, the information shown in the bottom left corner tells you where to find the base, so we go back to the traces and find base 597. According to the alignment result, there should be no base at the position, but you might wonder why: the quality of the lower read says it’s okay. But if you look just 2 base to the right (position 599), you see another <code>G</code> with a quality of not okay. That <code>G</code> supports an explanation, that one <code>G</code> (likely the last one) of the three continuous <code>G</code> is extra, possibly due to a “leak” of the leading <code>G</code> signal, or an error during the amplification process.</p>
+<p>In this particular scenario, I would just exclude everything starting from position 599, because it already shows that errors start showing up and the quality of subsequent bases are not very nice either.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/21insert2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25" title="21insert2"><img src="assets/21insert2.png" class="img-fluid figure-img" alt="21insert2"></a></p>
-<figcaption>21insert2</figcaption>
+<p><a href="assets/21insert2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23" title="The ambiguity at its contig, resolving ambiguities always require examining the chromatograms"><img src="assets/21insert2.png" class="img-fluid figure-img" alt="The ambiguity at its contig, resolving ambiguities always require examining the chromatograms"></a></p>
+<figcaption>The ambiguity at its contig, resolving ambiguities always require examining the chromatograms</figcaption>
 </figure>
 </div>
-<p>Now we can delete that artificial insertion with most confidence. Then we will repeat the process of generating consensus and run the MSA again, to confirm that the insertion is gone.</p>
+<p>Now we will repeat the process of generating consensus and run the MSA again, to confirm that the insertion is gone. If there are other indels, use the same method to resolve them. If you can’t resolve an indel, either something went really wrong, or it’s a real biological indel. For both case, I would suggest re-sequence it (with new PCR product), or investigate further if it persists.</p>
+<p>But I have never encountered such scenario yet, and again, a frame-shifting indel in COI is very hard to imagine, then you might want to check the translation too.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/22indelcheck.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26" title="22indelcheck"><img src="assets/22indelcheck.png" class="img-fluid figure-img" alt="22indelcheck"></a></p>
-<figcaption>22indelcheck</figcaption>
+<p><a href="assets/22indelcheck.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24" title="No more indels exist in the alignment"><img src="assets/22indelcheck.png" class="img-fluid figure-img" alt="No more indels exist in the alignment"></a></p>
+<figcaption>No more indels exist in the alignment</figcaption>
 </figure>
 </div>
-<p>When you happen to encounter artificial deletions, then you will be dealing with gaps not in multiples of three, only existing in one (or a few) sequence. You can check the source traces to see if two or more peak signals were merged into fewer bases, then you can add the merged bases back manually. If not, it could be a noteworthy case (the sequence might not be the actual gene), and the safest way is to change the gap <code>-</code> to ambiguity <code>N</code>, which stands for anything. By doing that, we tell everyone reading the sequence that we think there is something at the site, but we don’t know exactly what. If the other sequences all have the same base at the site, some people might also change the deletion to the consensus instead of <code>N</code>. But doing so would bring nothing, given that the existence of a 100% consensus means the site becomes completely <a href="https://en.wikipedia.org/wiki/Informative_site">uninformative</a>. So I recommend leaving them as <code>N</code>, it’s the safest and most responsible way to deal with it. For most of the time, you do not have any actual support for filling a gap using consensus from other sequences.</p>
-<p>After checking the indels, we also have to check the reading frames. Changing the display option allows you to have a nicer view of the amino acid translations of our sequences. Note that you need to select the <a href="https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi">correct genetic code</a>, which is the table 5 for my lovely isopods.</p>
+<p>When there happens to be any artificial deletions, you can check the source traces to see if two or more peak signals were merged into fewer bases, then you can add the merged bases back manually. If not, the safest way is to change the gap <code>-</code> to ambiguity <code>N</code>, which stands for anything. By doing that, we tell everyone (and every algorithm) reading the sequence, that we think there is something at the position, but we don’t know exactly what (hence anything). If the other sequences all have the same base at the site, some people might also change the deletion to the consensus instead of <code>N</code>. However, doing so would bring nothing, or even flaws. Existence of a 100% consensus means the site is completely <a href="https://en.wikipedia.org/wiki/Informative_site">parsimony-uninformative</a>. So I recommend leaving them as <code>N</code>, because for most of the time, we do not have any actual support for filling a gap using consensus from other sequences.</p>
+</section>
+<section id="checking-the-reading-frame" class="level4" data-number="7.1.3.3">
+<h4 data-number="7.1.3.3" class="anchored" data-anchor-id="checking-the-reading-frame"><span class="header-section-number">7.1.3.3</span> Checking the reading frame</h4>
+<p>After checking the indels, we also have to verify the reading frames. Changing the display option allows you to have a nicer view of the amino acid translations of our sequences. Note that you need to select the <a href="https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi">correct genetic code</a>, which is the table 5 for my lovely isopods.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/23rfcheck.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27" title="23rfcheck"><img src="assets/23rfcheck.png" class="img-fluid figure-img" alt="23rfcheck"></a></p>
-<figcaption>23rfcheck</figcaption>
+<p><a href="assets/23rfcheck.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25" title="Alignment view with only the translation being displayed, note the labels are now amino acids and each “block” is wider - it takes up places of three bp"><img src="assets/23rfcheck.png" class="img-fluid figure-img" alt="Alignment view with only the translation being displayed, note the labels are now amino acids and each “block” is wider - it takes up places of three bp"></a></p>
+<figcaption>Alignment view with only the translation being displayed, note the labels are now amino acids and each “block” is wider - it takes up places of three bp</figcaption>
 </figure>
 </div>
-<p>The detailed sequences are not particularly interesting to us at this point. But one thing is: <a href="https://en.wikipedia.org/wiki/Cytochrome_c_oxidase">cytochrome oxidase</a> is a key point in the respiration process, and if a cell can’t do that, it dies. So the COI must work, from gene to protein. What we check here is the stop codon, which terminates the translation process. A functional COI gene will not have any stop codons, at least within the region we sequenced. So if a sequence has one, it’s definitely something else, very likely a <a href="https://en.wikipedia.org/wiki/Pseudogene">pseudogene</a>. In that case, you have to remove it (the entire sequence). I noticed that it is also important to check this on GenBank sequences that you intend to include in your analysis, because I have found multiple of them actually having stop codons despite being registered as COI genes (maybe noted as unverified, though).</p>
+<p>The detailed sequences are not particularly interesting to us at this point, but one thing is: the stop codon, which terminates the translation process. A functional COI gene will not have any stop codons in between. So if a sequence has one, it’s not the gene we want, very likely a <a href="https://en.wikipedia.org/wiki/Pseudogene">pseudogene</a>. In that case, you have to remove it (the entire sequence). I noticed that it is also important to check this on GenBank sequences that you intend to include in your analysis, because I have found multiple of them actually having stop codons despite being registered as COI genes (maybe noted as unverified, though).</p>
 <p>Of course, if you think one step further, you will realize that excluding stop codons does not fully exclude pseudogenes, because recently formed pseudogenes might not yet have introduced stop codons into themselves. It is a recognized problem in DNA barcoding, and it’s not very easy to identify those pseudogenes if they haven’t accumulated stop codons. Thic could be something you’d like to keep in mind in the later analysis, when something really odd comes up. More to read:</p>
 <ul>
 <li><a href="https://www.pnas.org/doi/full/10.1073/pnas.0803076105">Many species in one: DNA barcoding overestimates the number of species when nuclear mitochondrial pseudogenes are coamplified</a></li>
@@ -487,40 +524,43 @@ ul.task-list li input[type="checkbox"] {
 <p>If your alignment has stop codons everywhere, don’t panic. It’s probably just translated in the wrong frame. A sequence has six frames, as the tRNAs recognize triplets and we have two strands. But since we have ensured that our sequences are in the right direction during earlier steps, you must find a frame without any stop codon in the first three (non-reverse) frames. Or it might indicate that the naming of your trace files is reversed or there are other serious problems (which I haven’t yet encountered).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/24rfcheck.png" class="lightbox" data-gallery="quarto-lightbox-gallery-28" title="24rfcheck"><img src="assets/24rfcheck.png" class="img-fluid figure-img" alt="24rfcheck"></a></p>
-<figcaption>24rfcheck</figcaption>
+<p><a href="assets/24rfcheck.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26" title="Alignment translated with a wrong reading frame"><img src="assets/24rfcheck.png" class="img-fluid figure-img" alt="Alignment translated with a wrong reading frame"></a></p>
+<figcaption>Alignment translated with a wrong reading frame</figcaption>
 </figure>
 </div>
+</section>
+<section id="checking-the-ambiguities" class="level4" data-number="7.1.3.4">
+<h4 data-number="7.1.3.4" class="anchored" data-anchor-id="checking-the-ambiguities"><span class="header-section-number">7.1.3.4</span> Checking the ambiguities</h4>
+<p>According to the translation result, sometimes it seems possible to resolve some ambiguities. The idea is to choose a base from the available signals (such as between <code>C</code> or <code>A</code> for <code>M</code>) that produce a translation product matching the other sequences. My general recommendation is <strong>don’t</strong>. The reason is the same as filling a deletion based on the consensus. It reduce the risk of introducing artificial error, but it also eliminates the possibility of accounting for the uncertainty due to technical reason properly in the subsequent analysis. And again, it might not bring much anyway.</p>
+</section>
 </section>
 <section id="export" class="level3" data-number="7.1.4">
 <h3 data-number="7.1.4" class="anchored" data-anchor-id="export"><span class="header-section-number">7.1.4</span> Export</h3>
-<p>Once we have checked that the sequence is clean and has no frame-shifting indels or stop codons, we are ready to do analysis. I prefer to export the sequence here, not the alignment. But you can do it too if it fits your workflow better. I always export them in <code>fasta</code> format, as it’s widely accepted and it’s simple. Just pay attention to export options. Wrapping sequence lines (interleaved) is often a bad idea. Replacing spaces with underscores is a safe way to name the sequence, but I suggest adding a name-cleaning step in the workflow anyway. Sequence descriptions usually have too many wild characters, and it’s really not the <code>fasta</code> file’s job to store that information.</p>
+<p>Once we have checked that the sequence is clean and has no frame-shifting indels or stop codons, we are ready to do analysis. Select the sequences and go to File &gt; Export selected documents.</p>
+<p>I prefer to only export the sequence here, not the alignment. But you can do it too if it fits your workflow better (and there won’t be any new sequence adding to it later). I always export them in <code>fasta</code> format, as it’s widely accepted and simple. Just pay attention to export options. Wrapping sequence lines (interleaved) is often a bad idea, except you want to personally read your <code>fasta</code> file. Replacing spaces with underscores is a safe way to name the sequence. Sequence description very likely contains wild characters that other programs hate, and it’s really not the <code>fasta</code> file’s job to store that information (never mix metadata with the primary data, except it’s for human communication).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/25ex.png" class="lightbox" data-gallery="quarto-lightbox-gallery-29" title="25ex"><img src="assets/25ex.png" class="img-fluid figure-img" style="width:30.0%" alt="25ex"></a></p>
-<figcaption>25ex</figcaption>
+<p><a href="assets/25ex.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27" title="Export options"><img src="assets/25ex.png" class="img-fluid figure-img" style="width:30.0%" alt="Export options"></a></p>
+<figcaption>Export options</figcaption>
 </figure>
 </div>
+<!-- ## Assemble by reference
+
+Sometimes, when the sequencing scheme is more complex and the target genes are variable, it can be tricky to assemble the contig only using the sequenced reads. For example, the whole 18S gene. We sequence it using 8 primers, but they are not one-to-one paired like 4 forward-reverse primer pairs. They are placed in offset so that the sequenced reads can cover the entire 18S gene region. Beside following the same steps I described in the previous section to perform simple _de novo_ assembly, one could also try to provide a guiding tree indicating the reads relationships and their overlapping scheme. But it is quite complex and does not produce much better result when there's a problem already choking simple _de novo_ assembly (I tried). 
+
+Before we dive deep into detailed assembly, a little background on ribosomal gene and a note on the terminologies (although some journals don't pay attention to it anyway): [eukaryotic ribosome](https://en.wikipedia.org/wiki/Eukaryotic_ribosome) has two subunits, 40S and 60S. S is the Svedberg units indicating the sedimentation coefficients. It does not linearly correlate with the molecule's size, mass, or the unit itself. So 40S and 60S subunits together make an 80S eukaryotic ribosome, not 100S. 40S subunit contains an 18S RNA, and that's what we are referring to with "18S rRNA" (rRNA stands for ribosomal RNA). But the rRNA **is not** what we are sequencing. We sequence the **gene** of the 18S rRNA, meaning the DNA template (if you are already lost here, check the [Central Dogma](https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology) again). That means what we actually sequenced is the "18S rDNA", or "18S rRNA gene". This makes a difference because sequencing an 18S rRNA means we extracted the RNA, instead of the DNA, and our analyses are at the transcription level, not the genetic level. rRNA transcribed from DNA undergoes modification before they form a functional ribosome, so the interpretation of the result could be completely different between 18S rDNA and 18S rRNA. So use the terms carefully and accordingly, especially in your final work. That's also why we will not be dealing with any uracil (U) in the sequences, because they are DNA (yet). 
+
+The whole 18S gene can be divided into several regions, some of them are conserved, some are variable. Since it is not a protein-coding gene, there's no reading frame nor evolutionary stress following the codon scheme. Instead, they are affected by the RNA's secondary structures, and some motifs are so wild that they can easily nuke the _de novo_ assembly. 
+
+![Attempt at assembling the 18S gene of _Antennuloniscus dimeroceras_. The bad quality of the shown region seems not come from technical origins, since a re-do of the sequencing produces the same result: the rest of the read has excellent quality, except the area where there appears to be a species-specific large insertion (see gaps in the reference sequence) enclosed by two dinucleotide repeats (GT on the left side and CG on the right side)](assets/26mess.png)
+
+So what we do is like the example here: we take a known sequence of the target gene as a reference (blueprint), preferably from closely related taxa, and map our reads against it. The conserved regions will hopefully match the reference and guide the variable regions. One way to do that is in Geneious, in the menu after right-clicking the trace files (tutorials will come). But I have developed a workflow for this in R with the `sangeranalyseR` package. 
+
+### -->
 </section>
 </section>
-<section id="assemble-by-reference" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="assemble-by-reference"><span class="header-section-number">7.2</span> Assemble by reference</h2>
-<p>Sometimes, when the sequencing scheme is more complex and the target genes are variable, it can be tricky to assemble the contig only using the sequenced reads. For example, the whole 18S gene. We sequence it using 8 primers, but they are not one-to-one paired like 4 forward-reverse primer pairs. They are placed in offset so that the sequenced reads can cover the entire 18S gene region. Beside following the same steps I described in the previous section to perform simple <em>de novo</em> assembly, one could also try to provide a guiding tree indicating the reads relationships and their overlapping scheme. But it is quite complex and does not produce much better result when there’s a problem already choking simple <em>de novo</em> assembly (I tried).</p>
-<p>Before we dive deep into detailed assembly, a little background on ribosomal gene and a note on the terminologies (although some journals don’t pay attention to it anyway): <a href="https://en.wikipedia.org/wiki/Eukaryotic_ribosome">eukaryotic ribosome</a> has two subunits, 40S and 60S. S is the Svedberg units indicating the sedimentation coefficients. It does not linearly correlate with the molecule’s size, mass, or the unit itself. So 40S and 60S subunits together make an 80S eukaryotic ribosome, not 100S. 40S subunit contains an 18S RNA, and that’s what we are referring to with “18S rRNA” (rRNA stands for ribosomal RNA). But the rRNA <strong>is not</strong> what we are sequencing. We sequence the <strong>gene</strong> of the 18S rRNA, meaning the DNA template (if you are already lost here, check the <a href="https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology">Central Dogma</a> again). That means what we actually sequenced is the “18S rDNA”, or “18S rRNA gene”. This makes a difference because sequencing an 18S rRNA means we extracted the RNA, instead of the DNA, and our analyses are at the transcription level, not the genetic level. rRNA transcribed from DNA undergoes modification before they form a functional ribosome, so the interpretation of the result could be completely different between 18S rDNA and 18S rRNA. So use the terms carefully and accordingly, especially in your final work. That’s also why we will not be dealing with any uracil (U) in the sequences, because they are DNA (yet).</p>
-<p>The whole 18S gene can be divided into several regions, some of them are conserved, some are variable. Since it is not a protein-coding gene, there’s no reading frame nor evolutionary stress following the codon scheme. Instead, they are affected by the RNA’s secondary structures, and some motifs are so wild that they can easily nuke the <em>de novo</em> assembly.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/26mess.png" class="lightbox" data-gallery="quarto-lightbox-gallery-30" title="Attempt at assembling the 18S gene of Antennuloniscus dimeroceras. The bad quality of the shown region seems not come from technical origins, since a re-do of the sequencing produces the same result: the rest of the read has excellent quality, except the area where there appears to be a species-specific large insertion (see gaps in the reference sequence) enclosed by two dinucleotide repeats (GT on the left side and CG on the right side)."><img src="assets/26mess.png" class="img-fluid figure-img" alt="Attempt at assembling the 18S gene of Antennuloniscus dimeroceras. The bad quality of the shown region seems not come from technical origins, since a re-do of the sequencing produces the same result: the rest of the read has excellent quality, except the area where there appears to be a species-specific large insertion (see gaps in the reference sequence) enclosed by two dinucleotide repeats (GT on the left side and CG on the right side)."></a></p>
-<figcaption>Attempt at assembling the 18S gene of <em>Antennuloniscus dimeroceras</em>. The bad quality of the shown region seems not come from technical origins, since a re-do of the sequencing produces the same result: the rest of the read has excellent quality, except the area where there appears to be a species-specific large insertion (see gaps in the reference sequence) enclosed by two dinucleotide repeats (GT on the left side and CG on the right side).</figcaption>
-</figure>
-</div>
-<p>So what we do is like the example here: we take a known sequence of the target gene as a reference (blueprint), preferably from closely related taxa, and map our reads against it. The conserved regions will hopefully match the reference and guide the variable regions. One way to do that is in Geneious, in the menu after right-clicking the trace files (tutorials will come). But I have developed a workflow for this in R with the <code>sangeranalyseR</code> package.</p>
-<section id="section" class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="section"><span class="header-section-number">7.2.1</span> </h3>
-</section>
-</section>
-<section id="resources" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="resources"><span class="header-section-number">7.3</span> Resources</h2>
+<section id="resources" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="resources"><span class="header-section-number">7.2</span> Resources</h2>
 <ul>
 <li><a href="https://v4.boldsystems.org/index.php/resources/handbook?chapter=7_validation.html">BOLD v4 Handbook Chapter 7: Barcode Data Validation</a></li>
 </ul>
