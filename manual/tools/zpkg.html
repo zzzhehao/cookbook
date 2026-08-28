@@ -73,11 +73,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-57a92833092fd6dc0d7710b6bdfff9c5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-57a92833092fd6dc0d7710b6bdfff9c5.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-57a92833092fd6dc0d7710b6bdfff9c5.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-9a52fd220bdc23f86aec7d2f8e901fff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-a9810936bb7193d00583eb508f5a0a0e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-598285c1e37c5884fda5962f1881f72e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-be1f17ea49195c21743e3a668c8909ca.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -242,8 +242,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../manual/phylogeny/seq_align.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Multiple Sequence Alignment (MSA)</span></span></a>
+  <a href="../../manual/phylogeny/seq_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Working with Sequences in R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manual/phylogeny/BOLD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Sequence Submission</span></span></a>
   </div>
 </li>
       </ul>
@@ -260,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../manual/gear/ROV.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">ROV</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">ROV</span></span></a>
   </div>
 </li>
       </ul>
@@ -316,21 +322,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <!-- Synced from `/Users/hu_zhehao/Desktop/zzzhehao/manual/tools/zpkg.md` -->
-<p>As I already mentioned, R is my primary language in everyday work. After a few years, I have built sets of handy functions that I repeatedly use, directly or within other functions. So I started managing them in packages and made them open source. You are welcome to use them, and they are dependencies for many of my workflows.</p>
+<p>After few years of using R, I learned more about R, and also about myself - I get extremely grumpy if I have to do the same work over and over. So I wrote them in functions and packaged them away so whatever details in those repetitive works won’t annoy me anymore.</p>
+<p>It might sound sloppy, but currently I recommend install from the <code>dev</code> branch, latest fixes on bugs are published there. It might take a while until those fixed are merged to the <code>main</code> branch.</p>
+<p>All packages can be installed from GitHub:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"zzzhehao/&lt;repo_name&gt;"</span>, <span class="at">ref =</span> <span class="st">"dev"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="utilities" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="utilities"><span class="header-section-number">1.1</span> Utilities</h2>
 <section id="zhutilsr-basic-utilities" class="level3" data-number="1.1.1">
 <h3 data-number="1.1.1" class="anchored" data-anchor-id="zhutilsr-basic-utilities"><span class="header-section-number">1.1.1</span> <code>zhutilsr</code> Basic Utilities</h3>
 <p>Basic utilities in R, handles database interactions, ggplot theming, general file management, custom logic, data wrangling, quality-checking, and cleaning. Dependency for most of my other packages.</p>
-<p>Install from GitHub:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"git@github.com:zzzhehao/zhutilsr.git"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="zseq-genetic-sequence-handling-analysis" class="level3" data-number="1.1.2">
 <h3 data-number="1.1.2" class="anchored" data-anchor-id="zseq-genetic-sequence-handling-analysis"><span class="header-section-number">1.1.2</span> <code>zseq</code> Genetic Sequence Handling &amp; Analysis</h3>
 <p>Tools for sequence handling and analysis.</p>
 <p>Importing and managing GenBank sequence and metadata via INSD XML file. Sequence I/O, metadata matching. Sanger sequence assembler (map to reference), alignment (local MAFFT) calculation, browsing, and editing, wrapper and interface to conventional tools (IQ-TREE, MrBayes, BEAST 2, ABGD, ASAP, GMYC, Gblocks), phylogenetic tree editing and visualization.</p>
-<p>Install from GitHub:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"git@github.com:zzzhehao/zseq.git"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="topic-specific" class="level2" data-number="1.2">
@@ -338,8 +343,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="rworms-taxonomist-friendly-r-interface-for-worms" class="level3" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="rworms-taxonomist-friendly-r-interface-for-worms"><span class="header-section-number">1.2.1</span> <code>rworms</code> Taxonomist-friendly R Interface for WoRMS</h3>
 <p>Functions to retrieve taxonomy and distribution data from <a href="https://www.marinespecies.org">World Register of Marine Species</a>.</p>
-<p>Install from GitHub:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"git@github.com:zzzhehao/rworms.git"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This package currently doesn’t have an active <code>dev</code> branch:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"zzhehao/rworms"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Blog:</p>
 <ul>
 <li><a href="https://zzzhehao.github.io/post/research/techs/rworms.html">{rworms}: an R package for retrieving information from WoRMS</a></li>
@@ -486,7 +491,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  const darkModeDefault = true;
+  const darkModeDefault = false;
   let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {

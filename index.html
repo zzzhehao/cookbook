@@ -38,11 +38,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-57a92833092fd6dc0d7710b6bdfff9c5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-57a92833092fd6dc0d7710b6bdfff9c5.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-57a92833092fd6dc0d7710b6bdfff9c5.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9a52fd220bdc23f86aec7d2f8e901fff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-a9810936bb7193d00583eb508f5a0a0e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-598285c1e37c5884fda5962f1881f72e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-be1f17ea49195c21743e3a668c8909ca.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -210,8 +210,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./manual/phylogeny/seq_align.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Multiple Sequence Alignment (MSA)</span></span></a>
+  <a href="./manual/phylogeny/seq_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Working with Sequences in R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./manual/phylogeny/BOLD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Sequence Submission</span></span></a>
   </div>
 </li>
       </ul>
@@ -228,7 +234,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./manual/gear/ROV.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">ROV</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">ROV</span></span></a>
   </div>
 </li>
       </ul>
@@ -250,9 +256,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
+  <li><a href="#philosophy" id="toc-philosophy" class="nav-link" data-scroll-target="#philosophy">Philosophy</a></li>
   <li><a href="#environment" id="toc-environment" class="nav-link" data-scroll-target="#environment">Environment</a>
   <ul>
-  <li><a href="#operating-system" id="toc-operating-system" class="nav-link" data-scroll-target="#operating-system">Operating System</a></li>
   <li><a href="#programming-languages" id="toc-programming-languages" class="nav-link" data-scroll-target="#programming-languages">Programming Languages</a></li>
   <li><a href="#program-ecosystems" id="toc-program-ecosystems" class="nav-link" data-scroll-target="#program-ecosystems">Program Ecosystems</a></li>
   </ul></li>
@@ -285,20 +291,27 @@ ul.task-list li input[type="checkbox"] {
 <section id="welcome" class="level1 unnumbered">
 <h1 class="unnumbered">Welcome</h1>
 <!-- Synced from `/Users/hu_zhehao/Desktop/zzzhehao/manual/manual.md` -->
-<p>This is my collection of manuals, cookbooks, and operation notes. It’s the practical counterpart of <a href="https://zzzhehao.github.io/notebook/">my notebook</a>, with focus on how to get things done over how does thing work. Likewise, the thematic focus is on deep-sea biology, from <em>in situ</em> to <em>in silico</em>.</p>
+<p>This is my collection of manuals, cookbooks, and operation notes. It’s the practical counterpart of <a href="https://zzzhehao.github.io/notebook/">my notebook</a> (currently a WIP mess), with focus on how to get things done (properly) over how things work. Likewise, the thematic focus is on deep-sea biology, from <em>in situ</em> to <em>in silico</em>.</p>
+</section>
+<section id="philosophy" class="level1">
+<h1>Philosophy</h1>
+<p>As I am establishing a toolkit, I try to make sense of my choice. If possible, I always use tools that has matching community (meaning developers and users can engage with each other, and the users share similar profiles with me), and value reproducibility, robustness, scalability, and automation.</p>
+<ul>
+<li>Lacking <strong>reproducibility</strong>, same methods on the same data might produce different results every time, or one just forgets how one did the work half a year ago.</li>
+<li>Lacking <strong>robustness</strong>, the analyses are usually subjective and one cannot convince others about the methods.</li>
+<li>Lacking <strong>scalability</strong>, required effort grows linearly, even exponentially with the amount of data.</li>
+<li>Lacking <strong>automation</strong>, precious human power and time is wasted by doing the repetitive works.</li>
+</ul>
+<p>These aspects have made my workflow to be heavily local and code-based. You might still find workflows centered around GUI here, it’s either because it’s required for interactive workflow, or I just haven’t established an alternative.</p>
 </section>
 <section id="environment" class="level1">
 <h1>Environment</h1>
-<section id="operating-system" class="level2">
-<h2 class="anchored" data-anchor-id="operating-system">Operating System</h2>
-<p>As most of the manuals I collect here are <em>in silico</em> (computing operations), I think it’s better to let you know my working environment and premises coming from it. The platform I use is macOS, so if not specified, all the shell commands are in <code>zsh</code>. I think for most of the programs it won’t make a big difference, but if you are using Windows, you might want to get familiar with the cmd and powershell syntax, as well as their CLI program ecosystems. So that when I am talking about running a shell script via Python scheduled by crontab, you can get the ideas and implement them on Windows, instead of wondering why <code>crontab -e</code> doesn’t work.</p>
-</section>
 <section id="programming-languages" class="level2">
 <h2 class="anchored" data-anchor-id="programming-languages">Programming Languages</h2>
 <p>The primary language I use is <strong>R</strong>. You know what it is if you work in biology. Python is also in my toolkit. I recommend installing them if you haven’t done so yet.</p>
 <ul>
 <li><a href="https://www.r-project.org">The R Project</a></li>
-<li>I personally use the newer <a href="https://positron.posit.co">Positron IDE</a> to do all my work, but you can also use <a href="https://posit.co/downloads">RStudio</a> combined with others.</li>
+<li>I personally use the newer <a href="https://positron.posit.co">Positron IDE</a> because it supports every language I use and is deeper integrated in the Posit ecosystems.</li>
 </ul>
 </section>
 <section id="program-ecosystems" class="level2">
@@ -449,7 +462,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  const darkModeDefault = true;
+  const darkModeDefault = false;
   let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {

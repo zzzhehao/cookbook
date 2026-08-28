@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../manual/phylogeny/seq_align.html" rel="next">
+<link href="../../manual/phylogeny/seq_r.html" rel="next">
 <link href="../../manual/phylogeny/pcr_sequencing.html" rel="prev">
 <link href="../../logo/logo_300.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
@@ -39,11 +73,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-57a92833092fd6dc0d7710b6bdfff9c5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-57a92833092fd6dc0d7710b6bdfff9c5.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-57a92833092fd6dc0d7710b6bdfff9c5.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-9a52fd220bdc23f86aec7d2f8e901fff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-a9810936bb7193d00583eb508f5a0a0e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-598285c1e37c5884fda5962f1881f72e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-be1f17ea49195c21743e3a668c8909ca.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -211,8 +245,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../manual/phylogeny/seq_align.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Multiple Sequence Alignment (MSA)</span></span></a>
+  <a href="../../manual/phylogeny/seq_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Working with Sequences in R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manual/phylogeny/BOLD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Sequence Submission</span></span></a>
   </div>
 </li>
       </ul>
@@ -229,7 +269,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../manual/gear/ROV.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">ROV</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">ROV</span></span></a>
   </div>
 </li>
       </ul>
@@ -250,25 +290,26 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#de-novo-assembly" id="toc-de-novo-assembly" class="nav-link active" data-scroll-target="#de-novo-assembly"><span class="header-section-number">7.1</span> <em>De novo</em> assembly</a>
+  <li><a href="#preface-data-and-software" id="toc-preface-data-and-software" class="nav-link active" data-scroll-target="#preface-data-and-software"><span class="header-section-number">7.1</span> Preface, Data, and Software</a></li>
+  <li><a href="#de-novo-assembly" id="toc-de-novo-assembly" class="nav-link" data-scroll-target="#de-novo-assembly"><span class="header-section-number">7.2</span> <em>De novo</em> assembly</a>
   <ul>
-  <li><a href="#import-and-assemble" id="toc-import-and-assemble" class="nav-link" data-scroll-target="#import-and-assemble"><span class="header-section-number">7.1.1</span> Import and assemble</a></li>
-  <li><a href="#extracting-the-contig" id="toc-extracting-the-contig" class="nav-link" data-scroll-target="#extracting-the-contig"><span class="header-section-number">7.1.2</span> Extracting the contig</a>
+  <li><a href="#import-and-assemble" id="toc-import-and-assemble" class="nav-link" data-scroll-target="#import-and-assemble"><span class="header-section-number">7.2.1</span> Import and assemble</a></li>
+  <li><a href="#extracting-the-contig" id="toc-extracting-the-contig" class="nav-link" data-scroll-target="#extracting-the-contig"><span class="header-section-number">7.2.2</span> Extracting the contig</a>
   <ul class="collapse">
-  <li><a href="#how-to-select-the-extracting-region" id="toc-how-to-select-the-extracting-region" class="nav-link" data-scroll-target="#how-to-select-the-extracting-region"><span class="header-section-number">7.1.2.1</span> How to select the extracting region?</a></li>
-  <li><a href="#removing-artificial-gaps" id="toc-removing-artificial-gaps" class="nav-link" data-scroll-target="#removing-artificial-gaps"><span class="header-section-number">7.1.2.2</span> Removing artificial gaps</a></li>
-  <li><a href="#optional-brush-the-contigs" id="toc-optional-brush-the-contigs" class="nav-link" data-scroll-target="#optional-brush-the-contigs"><span class="header-section-number">7.1.2.3</span> Optional: brush the contigs</a></li>
+  <li><a href="#how-to-select-the-extracting-region" id="toc-how-to-select-the-extracting-region" class="nav-link" data-scroll-target="#how-to-select-the-extracting-region"><span class="header-section-number">7.2.2.1</span> How to select the extracting region?</a></li>
+  <li><a href="#removing-artificial-gaps" id="toc-removing-artificial-gaps" class="nav-link" data-scroll-target="#removing-artificial-gaps"><span class="header-section-number">7.2.2.2</span> Removing artificial gaps</a></li>
+  <li><a href="#optional-brush-the-contigs" id="toc-optional-brush-the-contigs" class="nav-link" data-scroll-target="#optional-brush-the-contigs"><span class="header-section-number">7.2.2.3</span> Optional: brush the contigs</a></li>
   </ul></li>
-  <li><a href="#assembly-check" id="toc-assembly-check" class="nav-link" data-scroll-target="#assembly-check"><span class="header-section-number">7.1.3</span> Assembly check</a>
+  <li><a href="#assembly-check" id="toc-assembly-check" class="nav-link" data-scroll-target="#assembly-check"><span class="header-section-number">7.2.3</span> Assembly check</a>
   <ul class="collapse">
-  <li><a href="#building-consensus-and-exploratory-msa" id="toc-building-consensus-and-exploratory-msa" class="nav-link" data-scroll-target="#building-consensus-and-exploratory-msa"><span class="header-section-number">7.1.3.1</span> Building consensus and exploratory MSA</a></li>
-  <li><a href="#sec-seqprep-indelcheck" id="toc-sec-seqprep-indelcheck" class="nav-link" data-scroll-target="#sec-seqprep-indelcheck"><span class="header-section-number">7.1.3.2</span> Cleaning indels</a></li>
-  <li><a href="#checking-the-reading-frame" id="toc-checking-the-reading-frame" class="nav-link" data-scroll-target="#checking-the-reading-frame"><span class="header-section-number">7.1.3.3</span> Checking the reading frame</a></li>
-  <li><a href="#checking-the-ambiguities" id="toc-checking-the-ambiguities" class="nav-link" data-scroll-target="#checking-the-ambiguities"><span class="header-section-number">7.1.3.4</span> Checking the ambiguities</a></li>
+  <li><a href="#building-consensus-and-exploratory-msa" id="toc-building-consensus-and-exploratory-msa" class="nav-link" data-scroll-target="#building-consensus-and-exploratory-msa"><span class="header-section-number">7.2.3.1</span> Building consensus and exploratory MSA</a></li>
+  <li><a href="#sec-seqprep-indelcheck" id="toc-sec-seqprep-indelcheck" class="nav-link" data-scroll-target="#sec-seqprep-indelcheck"><span class="header-section-number">7.2.3.2</span> Cleaning indels</a></li>
+  <li><a href="#checking-the-stop-codons" id="toc-checking-the-stop-codons" class="nav-link" data-scroll-target="#checking-the-stop-codons"><span class="header-section-number">7.2.3.3</span> Checking the stop codons</a></li>
+  <li><a href="#checking-the-ambiguities" id="toc-checking-the-ambiguities" class="nav-link" data-scroll-target="#checking-the-ambiguities"><span class="header-section-number">7.2.3.4</span> Checking the ambiguities</a></li>
   </ul></li>
-  <li><a href="#export" id="toc-export" class="nav-link" data-scroll-target="#export"><span class="header-section-number">7.1.4</span> Export</a></li>
+  <li><a href="#export" id="toc-export" class="nav-link" data-scroll-target="#export"><span class="header-section-number">7.2.4</span> Export</a></li>
   </ul></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><span class="header-section-number">7.2</span> Resources</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><span class="header-section-number">7.3</span> Resources</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/zzzhehao/cookbook/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -295,17 +336,31 @@ ul.task-list li input[type="checkbox"] {
 
 
 <!-- Synced from `/Users/hu_zhehao/Desktop/zzzhehao/manual/phylogeny/seq_prep.md` -->
-<p><a href="https://www.sigmaaldrich.com/DE/en/technical-documents/protocol/genomics/sequencing/sanger-sequencing?srsltid=AfmBOoq07kOGGftAUVHCILxP56F9dQ1HKqYXckunvZl2aBSxzGIiwG-P">How does Sanger Sequencing work?</a></p>
-<p>Macrogen EZSeq and Eurofins Lightrun both return sequences in <code>ab1</code>, <code>phy</code>, <code>pdf</code> and <code>txt</code> file. <code>txt</code> file is the facility-exported sequence but considering how shitty the sequences sometimes can be, I never look at them because I need to manually assemble the sequence anyway. <code>phy</code> file is to me some ancient file type that none of my workflows use. Macrogen also returns <code>pdf</code> files with chromatograms, it’s wonderful to screen through to have a quick idea of whether the sequencing reaction went well or not. But the only file type that I am really interested in is the <code>ab1</code> file, also called the trace file, consider it as the “raw” data that contains the unedited information.</p>
-<p>But be careful, only the <code>ab1</code> files from the sequencing facility (so those created by Applied Biosystems) are the <em>real</em> <code>ab1</code> files. So yes, there are secondary generated <em>fake</em> <code>ab1</code> files, such as those you can download from BOLD project as “original trace”. They work mostly fine, but programs with stricter protocols (such as <code>sangeranalyseR</code> package) might find unwelcome characters and throw stubborn errors.</p>
+<section id="preface-data-and-software" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="preface-data-and-software"><span class="header-section-number">7.1</span> Preface, Data, and Software</h2>
+<ul>
+<li><a href="https://www.sigmaaldrich.com/DE/en/technical-documents/protocol/genomics/sequencing/sanger-sequencing?srsltid=AfmBOoq07kOGGftAUVHCILxP56F9dQ1HKqYXckunvZl2aBSxzGIiwG-P">How does Sanger Sequencing work?</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology">Central Dogma of Molecular Biology</a></li>
+</ul>
+<p>Macrogen EZSeq and Eurofins Lightrun both return sequences in various file types:</p>
+<ul>
+<li><code>txt</code>: the facility-exported sequence in plain text. Considering how shitty the sequences sometimes can be, I never look at them because I need to manually assemble the sequence anyway.</li>
+<li><code>phy</code>: PHYLIP, this is to me some ancient legacy file type that none of my workflows use.</li>
+<li><code>pdf</code>: shows chromatograms, wonderful to screen through to have a quick idea of whether the sequencing reaction went well or not.</li>
+<li><code>ab1</code>: also called the trace file, consider it as the “raw” data that contains the unedited information.
+<ul>
+<li>only the <code>ab1</code> files from the sequencing facility (so those created by Applied Biosystems) are the <em>real</em> <code>ab1</code> files. There are secondary generated <em>fake</em> <code>ab1</code> files, such as those you can download from BOLD project as “original trace”. They work mostly fine, but programs with stricter protocols (such as <code>sangeranalyseR</code> package) might find unwelcome characters and throw stubborn errors.</li>
+</ul></li>
+</ul>
 <p>I have tried to reduce the manual part in the workflow as much as possible, even to make it completely automated, but it turns out to be almost impossible, or it would sacrifice the integrity of our work. There must be a graphical interface at some point for us to check and manually edit the sequence because the various errors generated by low sequencing quality are not rare cases, but rather normal scenarios. Making an error-solving program was not very feasible since there’s always some surprise that can break generalized functions, and coding specialized functions makes no sense to me because then why not manually check them?</p>
-<p>My group currently uses <a href="https://www.geneious.com">Geneious</a>, but you have to pay (quite some money) for most of the features (starting from the next section). I am sure there are alternative programs out there but I didn’t have the time to find the whole suite that can replace Geneious without making me spend double the time on the same task. So consider paying for Geneious seems not a bad idea.</p>
-<section id="de-novo-assembly" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="de-novo-assembly"><span class="header-section-number">7.1</span> <em>De novo</em> assembly</h2>
+<p>My group currently uses <a href="https://www.geneious.com">Geneious</a>, but you have to pay (quite some money) for most of the features (starting from the next section). I tried to find <strong>free</strong> alternatives for Geneious, but I failed: either they also cost money, or it’s a loose patchwork of several programs, which costs time, effort, and nerve.</p>
+</section>
+<section id="de-novo-assembly" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="de-novo-assembly"><span class="header-section-number">7.2</span> <em>De novo</em> assembly</h2>
 <p>Some terminologies first, each <em>sequencing reaction</em> produce a trace file, which contains the raw fluorescence signal intensity (electrophoretogram, also called chromatogram) and the interpreted DNA sequence, they are continuous until reaching a point no interpretation can be made due to low SNR (signal-noise-ratio), and this is one <strong>read</strong>, it always goes from 5’ end to 3’ end. Reads can overlap with each other, so if we align them and produce a longer sequence, it becomes a <strong>contig</strong>, contigs are continuous too. Everything beyond contigs (e.g., scaffolds) will become part of genome assembly.</p>
 <p>In barcoding, there are two main ways to assemble reads into contigs. If the sequencing reads have a lot of overlap (e.g.&nbsp;in COI, both reads were essentially sequencing the same region), we can reconstruct the contig by only using the sequences at hand, and it’s called <strong><em>de novo</em> assembly</strong>.</p>
-<section id="import-and-assemble" class="level3" data-number="7.1.1">
-<h3 data-number="7.1.1" class="anchored" data-anchor-id="import-and-assemble"><span class="header-section-number">7.1.1</span> Import and assemble</h3>
+<section id="import-and-assemble" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="import-and-assemble"><span class="header-section-number">7.2.1</span> Import and assemble</h3>
 <p>Once the files are imported into Geneious, they are shown as sequencing reads.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -355,8 +410,8 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="extracting-the-contig" class="level3" data-number="7.1.2">
-<h3 data-number="7.1.2" class="anchored" data-anchor-id="extracting-the-contig"><span class="header-section-number">7.1.2</span> Extracting the contig</h3>
+<section id="extracting-the-contig" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="extracting-the-contig"><span class="header-section-number">7.2.2</span> Extracting the contig</h3>
 <p>Enlarging the view shows us that both reads are still treated as traces, and this is why we only <code>ab1</code> file. The concensus base calls shown at the top are also marked with quality measurement, and it accounts quality measurements directly from the chromatograms.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -365,7 +420,7 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <p>At this view, we will select the region where a good consensus can be calculated. Make sure to select both reads, and we would extract selected regions into a new file.</p>
-<p>There are no hard thresholds or rules defining from where to where should be selected, the main idea is to select a region with acceptable base call qualities. So in the previous screenshot, I persoannly would start from position 798, and in the following screenshot I would stop at position 1433. The reason is that from 798, the consensus base calls are becoming higher (although there two inserted ambiguities, but they are resolvable, see <a href="#sec-seqprep-indelcheck" class="quarto-xref"><span>Section 7.1.3.2</span></a>) and from 1433, the quality drops rapidly, not only because the upper reads ended, but the quality of the lower reads dropped too.</p>
+<p>There are no hard thresholds or rules defining from where to where should be selected, the main idea is to select a region with acceptable base call qualities. So in the previous screenshot, I persoannly would start from position 798, and in the following screenshot I would stop at position 1433. The reason is that from 798, the consensus base calls are becoming higher (although there two inserted ambiguities, but they are resolvable, see <a href="#sec-seqprep-indelcheck" class="quarto-xref"><span>Section 7.2.3.2</span></a>) and from 1433, the quality drops rapidly, not only because the upper reads ended, but the quality of the lower reads dropped too.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="assets/07denovoex.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Make sure to select both reads"><img src="assets/07denovoex.png" class="img-fluid figure-img" alt="Make sure to select both reads"></a></p>
@@ -379,11 +434,13 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Right-click on the selected region to extract</figcaption>
 </figure>
 </div>
-<section id="how-to-select-the-extracting-region" class="level4" data-number="7.1.2.1">
-<h4 data-number="7.1.2.1" class="anchored" data-anchor-id="how-to-select-the-extracting-region"><span class="header-section-number">7.1.2.1</span> How to select the extracting region?</h4>
+<section id="how-to-select-the-extracting-region" class="level4" data-number="7.2.2.1">
+<h4 data-number="7.2.2.1" class="anchored" data-anchor-id="how-to-select-the-extracting-region"><span class="header-section-number">7.2.2.1</span> How to select the extracting region?</h4>
 <p>Generally, I avoid including too many base calls with low confidence in consensus (those with dark blue color), except they are resolvable (e.g., due to a shift of one certain base in chromatogram, or the signal of a position “leaks” into its neighbours, etc.). Sometimes determining whether a low base call quality is a resolvable artefact or not requires thorough understanding of how the chromatogram was generated and what could possibly happen during the process. It is not possible to cover all chromatogram pattern you might see, but if you understand how those signals were produced, you would then be able to resolve obvious technical flaws and identify errors that can’t be resolved.</p>
-<p>A typical example of such thinking is that if there was a quality drop (individually or continuously) within a homopolymer or tandem repeat (e.g., <code>TTTTTTTT</code>, <code>CGCGCGCG</code>) near the start or the end of the contig (without validation from the reverse-complement read), it’s better to exclude the whole repeat region rather than keeping it. Because if any signal shifts in those bases happens, it’s almost impossible to verify and determine the exact number of repeats when the both neighbouring positions have the same base, because shifted, leaked, or merged signals produce the same look. Of course, if you have already read <a href="#sec-seqprep-indelcheck" class="quarto-xref"><span>Section 7.1.3.2</span></a>, you might notice that in some cases, you can actually verify and resolve them (very closely related taxa and enough number of sequences, target is protein-coding gene). It highlights that this decision process depends on quite a few aspects and also the goal of obtaining the information. It’s all about finding a balance between <em>extracting as much information as possible</em> and <em>avoid as much junk information as possible</em>.</p>
+<blockquote class="blockquote">
+<p>A typical example of such thinking is that if there was a quality drop (individually or continuously) within a homopolymer or tandem repeat (e.g., <code>TTTTTTTT</code>, <code>CGCGCGCG</code>) near the start or the end of the contig (without validation from the reverse-complement read), it’s better to exclude the whole repeat region rather than keeping it. Because if any signal shifts in those bases happens, it’s almost impossible to verify and determine the exact number of repeats when the both neighbouring positions have the same base, because shifted, leaked, or merged signals produce the same look. Of course, if you have already read <a href="#sec-seqprep-indelcheck" class="quarto-xref"><span>Section 7.2.3.2</span></a>, you might notice that in some cases, you can actually verify and resolve them (very closely related taxa and enough number of sequences, target is protein-coding gene). It highlights that this decision process depends on quite a few aspects and also the goal of obtaining the information. It’s all about finding a balance between <em>extracting as much information as possible</em> and <em>avoid as much junk information as possible</em>.</p>
 <p>If we go really deep into details, you will also start thinking whether resolving (struggling at) some base calls is actually worth the time, considering the potential of that base being a parsimony-uninformative site in your alignment, or amplifying the risk of introducing artificial error due to codon-bias, etc. So my philosophy in dealing with this step is: keep it consistent and reasonable, but also keep it simple. And I always choose short but clean reads over long but potentially flawed reads.</p>
+</blockquote>
 <p>Extracting the contig reagion is essentially trimming the reads, but doing it after the <em>de novo</em> assembly gives us an advantages: sometimes the reads are not as good as the ones we’ve seen here, a big part of the reads might just get discarded by the trimming algorithm, but if we assemble them anyway, we can still get a pretty good (at least useful) result by cross-checking the ambiguities with the reads from the other direction:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -392,8 +449,8 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="removing-artificial-gaps" class="level4" data-number="7.1.2.2">
-<h4 data-number="7.1.2.2" class="anchored" data-anchor-id="removing-artificial-gaps"><span class="header-section-number">7.1.2.2</span> Removing artificial gaps</h4>
+<section id="removing-artificial-gaps" class="level4" data-number="7.2.2.2">
+<h4 data-number="7.2.2.2" class="anchored" data-anchor-id="removing-artificial-gaps"><span class="header-section-number">7.2.2.2</span> Removing artificial gaps</h4>
 <p>After extracting the contigs, we need to do some manual clean-ups. The first few bases of Sanger sequencing are always shitty, it’s because of the dye blobs. And these shitty signals confuse the assembler, which inserts gaps <code>-</code> into the consensus. They are purely artificial, so we have to remove them. It can be easily done by selecting the consensus (not the individual sequence) and deleting it. You will probably get a warning window telling you how to edit the sequence properly, so from now on you have to pay attention to the keyboard: do not type unconsciously. Also remember to save your edits.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -423,9 +480,9 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="optional-brush-the-contigs" class="level4" data-number="7.1.2.3">
-<h4 data-number="7.1.2.3" class="anchored" data-anchor-id="optional-brush-the-contigs"><span class="header-section-number">7.1.2.3</span> Optional: brush the contigs</h4>
-<p>After cleaning the gaps, there’s one last thing to pay attention to. Any idea what’s wrong with this contig?</p>
+<section id="optional-brush-the-contigs" class="level4" data-number="7.2.2.3">
+<h4 data-number="7.2.2.3" class="anchored" data-anchor-id="optional-brush-the-contigs"><span class="header-section-number">7.2.2.3</span> Optional: brush the contigs</h4>
+<p>After cleaning the gaps, there’s one last thing to pay attention to.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="assets/13wrongdir.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="Which primer is forward, and which is reverse?"><img src="assets/13wrongdir.png" class="img-fluid figure-img" alt="Which primer is forward, and which is reverse?"></a></p>
@@ -440,13 +497,12 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <p>Some people do not do this step because many algorithms of multiple sequence alignment (MSA) nowadays can resolve the direction automatically, but they do not know how the gene should look like, and sometimes you would get a whole alignment of reverse-complemented sequence. I deliberately added “optional” to this section but I strongly recommend to do this. Skipping this step can become a time bomb if you want to check anything in detail later.</p>
-<p>I couldn’t find any settings in Geneious where I might be able to specify the forward / reverse primer when performing the <em>de novo</em> assembly. If anyone knows, please do let me know. It seems quite surreal that software like Geneious doesn’t have that feature.</p>
 </section>
 </section>
-<section id="assembly-check" class="level3" data-number="7.1.3">
-<h3 data-number="7.1.3" class="anchored" data-anchor-id="assembly-check"><span class="header-section-number">7.1.3</span> Assembly check</h3>
-<section id="building-consensus-and-exploratory-msa" class="level4" data-number="7.1.3.1">
-<h4 data-number="7.1.3.1" class="anchored" data-anchor-id="building-consensus-and-exploratory-msa"><span class="header-section-number">7.1.3.1</span> Building consensus and exploratory MSA</h4>
+<section id="assembly-check" class="level3" data-number="7.2.3">
+<h3 data-number="7.2.3" class="anchored" data-anchor-id="assembly-check"><span class="header-section-number">7.2.3</span> Assembly check</h3>
+<section id="building-consensus-and-exploratory-msa" class="level4" data-number="7.2.3.1">
+<h4 data-number="7.2.3.1" class="anchored" data-anchor-id="building-consensus-and-exploratory-msa"><span class="header-section-number">7.2.3.1</span> Building consensus and exploratory MSA</h4>
 <p>Since we have assembled the contig, we will make consensus sequences from the contigs. Right-click the checked contigs and run “Generate Consensus Sequence”.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -476,9 +532,8 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="sec-seqprep-indelcheck" class="level4" data-number="7.1.3.2">
-<h4 data-number="7.1.3.2" class="anchored" data-anchor-id="sec-seqprep-indelcheck"><span class="header-section-number">7.1.3.2</span> Cleaning indels</h4>
-<p>From this point, you need to have a basic understanding of the <a href="https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology">Central Dogma of Molecular Biology</a>, particularly how does a protein-coding gene become an actual protein.</p>
+<section id="sec-seqprep-indelcheck" class="level4" data-number="7.2.3.2">
+<h4 data-number="7.2.3.2" class="anchored" data-anchor-id="sec-seqprep-indelcheck"><span class="header-section-number">7.2.3.2</span> Cleaning indels</h4>
 <p>Still remember the one inserted <code>K</code> from earlier? We can find that ambiguity in the alignment too. We see that the <code>K</code> only appears in one sequence and the positions in the rest are marked as gap <code>-</code>. These are not the gaps we forgot to clean, they are new gaps inserted by MSA algorithm, because the rest of the sequences align with each other better when this <code>K</code> is treated as an extra in its sequence. This is an <em><strong>insertion</strong></em>. It’s counterpart is <strong><em>deletion</em></strong>, where bases are missing comparing to others. Insertions and deletions are called together as <strong><em>indel</em></strong>. In this example, the insertion happens to be am ambiguity, but it can also be a well-supported base just like the others.</p>
 <p>Indel naturally happens in sequence evolution, but rarely in this fashion. COI (cytochrome oxidase subunit I) gene is, as the name already says, a protein-coding gene, which means the nucleotide sequence has <strong>reading frames</strong> (read by tRNA). And the reading frames of the eukaryotic lifeforms on this planet (most, if there are exceptions that I don’t know of) are all triplets, i.e., every three bases are translated into one amino acid. That means a 1-bp insertion will mess up all the downstream translation, we call such an insertion a <a href="https://en.wikipedia.org/wiki/Frameshift_mutation">“frameshift” mutation</a> (indels with length that is not a multiple of three). This will result in a huge change in protein functionality that most certainly comes with enormous selection forces, especially for protein like COI. <a href="https://en.wikipedia.org/wiki/Cytochrome_c_oxidase">Cytochrome oxidase</a> is a key component in the respiratory chain reaction, and if a cell can’t breath, it dies. So the COI must work, from gene to protein. Simply put, such indels can happen, but the selection pressure will likely make it hard to survive and amplify. To prove such an insertion is real, multiple lines of evidence are required to explain and support it.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -505,8 +560,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>When there happens to be any artificial deletions, you can check the source traces to see if two or more peak signals were merged into fewer bases, then you can add the merged bases back manually. If not, the safest way is to change the gap <code>-</code> to ambiguity <code>N</code>, which stands for anything. By doing that, we tell everyone (and every algorithm) reading the sequence, that we think there is something at the position, but we don’t know exactly what (hence anything). If the other sequences all have the same base at the site, some people might also change the deletion to the consensus instead of <code>N</code>. However, doing so would bring nothing, or even flaws. Existence of a 100% consensus means the site is completely <a href="https://en.wikipedia.org/wiki/Informative_site">parsimony-uninformative</a>. So I recommend leaving them as <code>N</code>, because for most of the time, we do not have any actual support for filling a gap using consensus from other sequences.</p>
 </section>
-<section id="checking-the-reading-frame" class="level4" data-number="7.1.3.3">
-<h4 data-number="7.1.3.3" class="anchored" data-anchor-id="checking-the-reading-frame"><span class="header-section-number">7.1.3.3</span> Checking the reading frame</h4>
+<section id="checking-the-stop-codons" class="level4" data-number="7.2.3.3">
+<h4 data-number="7.2.3.3" class="anchored" data-anchor-id="checking-the-stop-codons"><span class="header-section-number">7.2.3.3</span> Checking the stop codons</h4>
 <p>After checking the indels, we also have to verify the reading frames. Changing the display option allows you to have a nicer view of the amino acid translations of our sequences. Note that you need to select the <a href="https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi">correct genetic code</a>, which is the table 5 for my lovely isopods.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -514,30 +569,42 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Alignment view with only the translation being displayed, note the labels are now amino acids and each “block” is wider - it takes up places of three bp</figcaption>
 </figure>
 </div>
-<p>The detailed sequences are not particularly interesting to us at this point, but one thing is: the stop codon, which terminates the translation process. A functional COI gene will not have any stop codons in between. So if a sequence has one, it’s not the gene we want, very likely a <a href="https://en.wikipedia.org/wiki/Pseudogene">pseudogene</a>. In that case, you have to remove it (the entire sequence). I noticed that it is also important to check this on GenBank sequences that you intend to include in your analysis, because I have found multiple of them actually having stop codons despite being registered as COI genes (maybe noted as unverified, though).</p>
+<p>The detailed sequences are not particularly interesting to us at this point, but one thing is: the stop codon, which terminates the translation process. A functional COI gene will not have any stop codons in between. So if a sequence has one, it’s not the gene we want, very likely a <a href="https://en.wikipedia.org/wiki/Pseudogene">pseudogene</a>. In that case, you have to remove it (the entire sequence).</p>
 <p>Of course, if you think one step further, you will realize that excluding stop codons does not fully exclude pseudogenes, because recently formed pseudogenes might not yet have introduced stop codons into themselves. It is a recognized problem in DNA barcoding, and it’s not very easy to identify those pseudogenes if they haven’t accumulated stop codons. Thic could be something you’d like to keep in mind in the later analysis, when something really odd comes up. More to read:</p>
 <ul>
 <li><a href="https://www.pnas.org/doi/full/10.1073/pnas.0803076105">Many species in one: DNA barcoding overestimates the number of species when nuclear mitochondrial pseudogenes are coamplified</a></li>
 <li><a href="https://www.authorea.com/doi/full/10.22541/au.163277441.14875855/v1">Do pseudogenes pose a problem for metabarcoding marine animal communities?</a></li>
 <li><a href="https://academic.oup.com/jcb/article/29/1/96/2548098">“COI-like” Sequences Are Becoming Problematic in Molecular Systematic and DNA Barcoding Studies</a></li>
 </ul>
-<p>If your alignment has stop codons everywhere, don’t panic. It’s probably just translated in the wrong frame. A sequence has six frames, as the tRNAs recognize triplets and we have two strands. But since we have ensured that our sequences are in the right direction during earlier steps, you must find a frame without any stop codon in the first three (non-reverse) frames. Or it might indicate that the naming of your trace files is reversed or there are other serious problems (which I haven’t yet encountered).</p>
+<p>If your alignment has stop codons everywhere, most of the time it’s because of being translated in the wrong frame (or you are checking a non-protein-coding gene). A sequence has six frames, as the tRNAs recognize triplets and we have two strands. But since we have ensured that our sequences are in the right direction during earlier steps, you must find a frame without any stop codon in the first three (non-reverse) frames. Or it might indicate that the naming of your trace files is reversed or there are other serious problems (which I haven’t yet encountered).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="assets/24rfcheck.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26" title="Alignment translated with a wrong reading frame"><img src="assets/24rfcheck.png" class="img-fluid figure-img" alt="Alignment translated with a wrong reading frame"></a></p>
 <figcaption>Alignment translated with a wrong reading frame</figcaption>
 </figure>
 </div>
+<p>You can also check stop codons in R using <code>zseq::codon_summary()</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(zseq)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>aln.path <span class="ot">&lt;-</span> <span class="st">"data/sequence/alignment/COI_combined.fasta"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>aln <span class="ot">&lt;-</span> ape<span class="sc">::</span><span class="fu">read.FASTA</span>(aln.path)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>aln.codon <span class="ot">&lt;-</span> <span class="fu">codon_summary</span>(aln, <span class="at">code =</span> <span class="dv">5</span>) <span class="co"># one NCBI seq has stop codons</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It’s intended to check sequences obtained from GenBank, as sometimes they also contains stop codon, even though they are registered as COI sequence.</p>
 </section>
-<section id="checking-the-ambiguities" class="level4" data-number="7.1.3.4">
-<h4 data-number="7.1.3.4" class="anchored" data-anchor-id="checking-the-ambiguities"><span class="header-section-number">7.1.3.4</span> Checking the ambiguities</h4>
+<section id="checking-the-ambiguities" class="level4" data-number="7.2.3.4">
+<h4 data-number="7.2.3.4" class="anchored" data-anchor-id="checking-the-ambiguities"><span class="header-section-number">7.2.3.4</span> Checking the ambiguities</h4>
 <p>According to the translation result, sometimes it seems possible to resolve some ambiguities. The idea is to choose a base from the available signals (such as between <code>C</code> or <code>A</code> for <code>M</code>) that produce a translation product matching the other sequences. My general recommendation is <strong>don’t</strong>. The reason is the same as filling a deletion based on the consensus. It reduces the risk of introducing an artificial error, but it also eliminates the possibility of accounting for the uncertainty due to technical reason properly in the subsequent analysis. And again, it might not bring much anyway, and even if it did, this kind of editing is not really a sounded argument that you want to have in the paper.</p>
 </section>
 </section>
-<section id="export" class="level3" data-number="7.1.4">
-<h3 data-number="7.1.4" class="anchored" data-anchor-id="export"><span class="header-section-number">7.1.4</span> Export</h3>
+<section id="export" class="level3" data-number="7.2.4">
+<h3 data-number="7.2.4" class="anchored" data-anchor-id="export"><span class="header-section-number">7.2.4</span> Export</h3>
 <p>Once we have checked that the sequence is clean and has no frame-shifting indels or stop codons, we are ready to do analysis. Select the sequences and go to File &gt; Export selected documents.</p>
-<p>I prefer to only export the sequence here, not the alignment. But you can do it too if it fits your workflow better (and there won’t be any new sequence adding to it later). I always export them in <code>fasta</code> format, as it’s widely accepted and simple. Just pay attention to export options. Wrapping sequence lines (interleaved) is often a bad idea, except you want to personally read your <code>fasta</code> file. Replacing spaces with underscores is a safe way to name the sequence. Sequence description very likely contains wild characters that other programs hate, and it’s really not the <code>fasta</code> file’s job to store that information (never mix metadata with the primary data, except it’s for human communication).</p>
+<p>I prefer to only export the sequence here, not the alignment. But you can do it too if it fits your workflow better (and there won’t be any new sequence adding to it later). I always export them in <code>fasta</code> format, as it’s widely accepted and simple. Just pay attention to export options:</p>
+<ul>
+<li>wrapping sequence lines (interleaved) is often a bad idea, except you want to personally read your <code>fasta</code> file.</li>
+<li>replacing spaces with underscores is a safe way to name the sequence.</li>
+<li>Sequence description very likely contains wild characters that other programs hate (and it’s really not the <code>fasta</code> file’s job to store that information: never mix metadata with the primary data, except it’s for human communication).</li>
+</ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="assets/25ex.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27" title="Export options"><img src="assets/25ex.png" class="img-fluid figure-img" style="width:30.0%" alt="Export options"></a></p>
@@ -559,8 +626,8 @@ So what we do is like the example here: we take a known sequence of the target g
 ### -->
 </section>
 </section>
-<section id="resources" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="resources"><span class="header-section-number">7.2</span> Resources</h2>
+<section id="resources" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="resources"><span class="header-section-number">7.3</span> Resources</h2>
 <ul>
 <li><a href="https://v4.boldsystems.org/index.php/resources/handbook?chapter=7_validation.html">BOLD v4 Handbook Chapter 7: Barcode Data Validation</a></li>
 </ul>
@@ -705,7 +772,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  const darkModeDefault = true;
+  const darkModeDefault = false;
   let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
@@ -1188,8 +1255,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../manual/phylogeny/seq_align.html" class="pagination-link" aria-label="Multiple Sequence Alignment (MSA)">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Multiple Sequence Alignment (MSA)</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../manual/phylogeny/seq_r.html" class="pagination-link" aria-label="Working with Sequences in R">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Working with Sequences in R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

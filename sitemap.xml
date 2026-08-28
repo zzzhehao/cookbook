@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://zzzhehao.github.io/cookbook/index.html</loc>
-    <lastmod>2026-07-31T21:21:04.512Z</lastmod>
+    <lastmod>2026-08-28T10:44:53.579Z</lastmod>
   </url>
   <url>
     <loc>https://zzzhehao.github.io/cookbook/manual/tools/zpkg.html</loc>
-    <lastmod>2026-07-31T21:21:04.595Z</lastmod>
+    <lastmod>2026-08-28T13:28:41.588Z</lastmod>
   </url>
   <url>
     <loc>https://zzzhehao.github.io/cookbook/manual/tools/molspec_tools.html</loc>
@@ -26,15 +26,19 @@
   </url>
   <url>
     <loc>https://zzzhehao.github.io/cookbook/manual/phylogeny/pcr_sequencing.html</loc>
-    <lastmod>2026-07-31T21:21:04.587Z</lastmod>
+    <lastmod>2026-08-26T15:32:02.636Z</lastmod>
   </url>
   <url>
     <loc>https://zzzhehao.github.io/cookbook/manual/phylogeny/seq_prep.html</loc>
-    <lastmod>2026-08-25T15:50:29.699Z</lastmod>
+    <lastmod>2026-08-28T12:04:16.483Z</lastmod>
   </url>
   <url>
-    <loc>https://zzzhehao.github.io/cookbook/manual/phylogeny/seq_align.html</loc>
-    <lastmod>2026-07-31T21:21:04.592Z</lastmod>
+    <loc>https://zzzhehao.github.io/cookbook/manual/phylogeny/seq_r.html</loc>
+    <lastmod>2026-08-28T13:40:03.981Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zzzhehao.github.io/cookbook/manual/phylogeny/BOLD.html</loc>
+    <lastmod>2026-08-28T13:32:04.472Z</lastmod>
   </url>
   <url>
     <loc>https://zzzhehao.github.io/cookbook/manual/gear/ROV.html</loc>

@@ -59,11 +59,11 @@ div.csl-indent {
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-57a92833092fd6dc0d7710b6bdfff9c5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-57a92833092fd6dc0d7710b6bdfff9c5.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-57a92833092fd6dc0d7710b6bdfff9c5.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-9a52fd220bdc23f86aec7d2f8e901fff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-a9810936bb7193d00583eb508f5a0a0e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-598285c1e37c5884fda5962f1881f72e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-be1f17ea49195c21743e3a668c8909ca.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -257,8 +257,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../manual/phylogeny/seq_align.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Multiple Sequence Alignment (MSA)</span></span></a>
+  <a href="../../manual/phylogeny/seq_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Working with Sequences in R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../manual/phylogeny/BOLD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Sequence Submission</span></span></a>
   </div>
 </li>
       </ul>
@@ -275,7 +281,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../manual/gear/ROV.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">ROV</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">ROV</span></span></a>
   </div>
 </li>
       </ul>
@@ -766,7 +772,7 @@ window.Quarto = {
 <li>1 μl Exo I</li>
 <li>2 μl FAST-AP</li>
 </ul></li>
-<li>Mix by gently flick the tube, add it in the lids of the strips and spin down to products. No more mixing.</li>
+<li>Mix by gently flicking the tube, add it in the lids of the strips and spin down to products. Then no more mixing.</li>
 <li>Incubate (in thermocycler): 15 min at 37ºC and 15 min at 80ºC.</li>
 </ul>
 </section>
@@ -774,6 +780,7 @@ window.Quarto = {
 <h2 data-number="6.6" class="anchored" data-anchor-id="sequencing"><span class="header-section-number">6.6</span> Sequencing</h2>
 <ul>
 <li>Both Eurofins Lightrun and Macrogen EZ-Seq require the same composition.</li>
+<li>Both Eurofins and Macrogen require booking the pick-up service in advance (one day earlier or in early morning).</li>
 <li>5 μl PCR product + 5 μl primer (5 pmol/ul)</li>
 <li>Macrogen EZ-seq provides portal for metadata import: <a href="https://order.macrogen-europe.com/mypage/ezseq/retrieveEzEcoSeqSearch.do?menuCd=ORD100800">Metadata upload portal</a></li>
 </ul>
@@ -938,7 +945,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  const darkModeDefault = true;
+  const darkModeDefault = false;
   let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
